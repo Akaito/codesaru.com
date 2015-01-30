@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<GhostBin version="1" style="7">
+    <String name="score_id">{{ score_id }}</String>
+    <String name="desc">{{ desc }}</String>
+</ScoreSet>
+

@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <title>Central Flash - Index</title>
+    </head>
+    <body>
+        {%- for item in item_list %}
+            {{ item }}{% if not loop.last %},{% endif %}
+        {%- endfor %}
+    </body>
+</html>
