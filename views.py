@@ -8,4 +8,4 @@ def index():
 
 @app.route('/test')
 def test():
-    return 'Yay, it works!'
+    return 'Yay, it updated!'
