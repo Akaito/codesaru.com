@@ -60,8 +60,8 @@ def old_ghost_get(bin_data=None):
         return bin_data
     return render_template(
         'old/ghost_get.xml',
-        score_id = 4
-        desc     = 'foo'
+        score_id = 4,
+        desc = 'foo'
     )
 
 @app.route('/old/score_upload_with_ghost.php')

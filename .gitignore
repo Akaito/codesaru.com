@@ -1,6 +1,7 @@
 *~
 *.swp
 *.pyc
+*__
 flask-env
 virtualenv.py
 private/*
