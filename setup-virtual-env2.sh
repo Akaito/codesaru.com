@@ -1,7 +1,7 @@
 #!/bin/bash
 
 venvpy="virtualenv.py"
-venvpysrc="https://raw.github.com/pypa/virtualenv/1.9.X/virtualenv.py"
+venvpysrc="https://raw.githubusercontent.com/pypa/virtualenv/master/virtualenv.py"
 venvdir="flask-env"
 # Virtual environment setup script must be executable
 if [ ! -x "$venvpy" ]; then
