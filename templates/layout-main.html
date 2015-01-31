@@ -22,7 +22,7 @@
 			<div id="links">
 				<ol class="breadcrumb">
 					{% if breadcrumbs %}
-						{% for crumb in breadcrumbs.crumbs %}
+						{% for crumb in breadcrumbs %}
 							<li{% if loop.last %} class="last_crumb"{% endif %}>{% if crumb.path %}<a href="{{ crumb.path }}">{% endif %}{{ crumb.text }}{% if crumb.path %}</a>{% endif %}</li>
 						{% endfor %}
 					{% endif %}

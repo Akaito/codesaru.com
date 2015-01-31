@@ -56,12 +56,15 @@ header {
 	color: #529AD6;
 	text-decoration: none;
 }
+.breadcrumb a:hover {
+	text-decoration: underline;
+}
 .breadcrumb li {
 	display: inline;
 	white-space: nowrap;
 }
 .breadcrumb li::after {
-	content: " > ";
+	content: " // ";
 }
 .breadcrumb li.last_crumb::after {
 	content: "";
