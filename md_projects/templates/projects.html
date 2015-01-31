@@ -1,0 +1,8 @@
+{% extends "layout-main.html" %}
+{% block contents %}
+	<ul>
+	{% for project_key in projects %}
+		<li><span class="publication_info">{{ projects[project_key].date }}</span> <a href="{{ project_key }}">{{ projects[project_key].title }}</a></li>
+	{% endfor %}
+	</ul>
+{% endblock %}

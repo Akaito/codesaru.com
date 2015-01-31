@@ -1,3 +1,41 @@
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #3B3B3B;
+	margin-bottom: 0;
+}
+h1 {
+	font-size: 1.45em;
+}
+h3 {
+	font-size: 1.35em;
+}
+hr {
+	/* http://css-tricks.com/examples/hrs/ */
+	border: 0;
+	height: 0;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(255,255,255,0.33);
+}
+p {
+}
+ul {
+	padding-left: 2.0em;
+	list-style-type: circle;
+}
+ul li {
+}
+a {
+	color: #027AC6;
+	text-decoration: none;
+}
+a:visited, a:active {
+	color: #474AB6;
+}
+a:hover {
+	text-decoration: underline;
+}
+
 body {
 	margin: 0px;
 	font-family: Verdana, sans-serif;
@@ -211,26 +249,4 @@ footer {
 	font-family: monospace;
 	color: gray;
 	text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
-	font-family: Helvetica, Arial, sans-serif;
-	color: #3B3B3B;
-}
-h1 {
-	font-size: 1.45em;
-}
-hr {
-	/* http://css-tricks.com/examples/hrs/ */
-	border: 0;
-	height: 0;
-	border-top: 1px solid rgba(0,0,0,0.1);
-	border-bottom: 1px solid rgba(255,255,255,0.33);
-}
-ul {
-	padding-left: 2.0em;
-	list-style-type: circle;
-}
-ul li {
 }

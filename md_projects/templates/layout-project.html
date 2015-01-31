@@ -1,0 +1,15 @@
+{% extends "layout-main.html" %}
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='md_projects.css') }}"/>
+{% endblock %}
+
+{% block contents %}
+	<div id="md_project_title">
+		<h1>{% block project_title %}{% endblock %}</h1>
+		<span class="publication_info">{% block publication_date %}{% endblock %}</span>
+		<hr/>
+	</div> <!-- /project_title -->
+	<article>
+		<div class="project_contents">{% block project_contents %}{% endblock %}</div>
+	</article>
+{% endblock %}
