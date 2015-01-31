@@ -1,5 +1,5 @@
 from flask import abort, flash, render_template
-from app import app, stories
+from app import app
 
 @app.route('/')
 @app.route('/index')
