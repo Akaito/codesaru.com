@@ -31,7 +31,7 @@ We worked primarily from May 2010 through November 2011.  Typically while carryi
 - <a href="http://en.wikipedia.org/wiki/DirectX" target="_blank">Microsoft DirectX
 - <a href="http://www.audiokinetic.com/en/products/wwise/introduction" target="_blank">Audiokinetic Wwise
 - <a href="http://www.antisphere.com/Wiki/tools:anttweakbar" target="_blank">AntTweakBar</a>
-- <a href="http://www.grinninglizard.com/tinyxml/" target="_blank">TinyXml</a>
+- <a href="http://www.grinninglizard.com/tinyxml/" target="_blank">TinyXML</a>
 - <a href="http://www.audiokinetic.com/en/products/wwise/introduction" target="_blank">cURL</a>
 
 ### Credits
