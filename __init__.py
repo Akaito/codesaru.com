@@ -8,5 +8,5 @@ application.register_blueprint(md_stories, url_prefix='/stories')
 
 application.secret_key = 'local-only-secret'
 
-from app.views import main
+from app import views
 
