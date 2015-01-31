@@ -4,7 +4,8 @@ from markdown import markdown
 from os import path, walk
 
 md_stories = Blueprint('md_stories', __name__,
-	template_folder='templates'
+	template_folder='templates',
+	static_folder='static'
 )
 
 content_dir = path.join(md_stories.root_path, 'content')

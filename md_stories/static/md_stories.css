@@ -1,0 +1,15 @@
+#md_story_title {
+	margin-top: 1em;
+}
+#md_story_title h1 {
+	display: inline;
+}
+#md_story_title .publication_info {
+	display: inline;
+	margin-left: 1%;
+}
+#md_story_title hr {
+	clear: both;
+	margin-top: 0.55em;
+	margin-bottom: 2%;
+}
