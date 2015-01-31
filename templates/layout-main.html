@@ -15,12 +15,16 @@
 				</ul>
 			</div> <!-- /top_links -->
 			<div id="site_title">
-				<a href="/"><span id="title">Codesaru</span> | Chris Barrett's Portfolio Site</a>
+				<a href="/"><span id="title">Codesaru</span>&nbsp;&nbsp;Chris Barrett's Portfolio Site</a>
 			</div> <!-- /site_title -->
 		</header>
 		<nav>
 			<div id="links">
-				Nav > test > here.
+				<ol class="breadcrumb">
+					{% for crumb in breadcrumbs.crumbs %}
+						<li{% if loop.last %} class="last_crumb"{% endif %}>{% if crumb.path %}<a href="{{ crumb.path }}">{% endif %}{{ crumb.text }}{% if crumb.path %}</a>{% endif %}</li>
+					{% endfor %}
+				</ol>
 			</div>
 		</nav>
 	</div> <!-- /top_part -->

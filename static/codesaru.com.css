@@ -45,6 +45,27 @@ header {
 	height: 80px;
 }
 
+.breadcrumb {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	font-size: 0.85em;
+}
+.breadcrumb a {
+	color: #529AD6;
+	text-decoration: none;
+}
+.breadcrumb li {
+	display: inline;
+	white-space: nowrap;
+}
+.breadcrumb li::after {
+	content: " > ";
+}
+.breadcrumb li.last_crumb::after {
+	content: "";
+}
 #top_links {
 	float: right;
 	margin-top: 2px;
@@ -106,6 +127,7 @@ nav {
 	background-color: white;
 }
 nav #links {
+	height: 29px;
 	background: linear-gradient(
 		to bottom,
 		#D4EBF9,
