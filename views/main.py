@@ -2,25 +2,25 @@ import os
 from flask import abort, Blueprint, flash, Markup, render_template
 from jinja2 import TemplateNotFound
 from markdown import markdown
-from app import app
+from app import application
 
 index_crumbs = [{'text': 'Home', 'path': '/'}]
 
-@app.route('/')
-@app.route('/index')
+@application.route('/')
+@application.route('/index')
 def index():
 	return render_template(
 		'index.html'
 	)
 
-@app.route('/story/account-less-online-friend-oriented-leaderboards')
+@application.route('/story/account-less-online-friend-oriented-leaderboards')
 def story_account_less_leaderboards():
 	return render_template(
 		'story/account-less-online-friend-oriented-leaderboards.html',
 		breadcrumbs=index_crumbs
 	)
 
-@app.route('/test')
+@application.route('/test')
 def test():
 	flash('Hello,')
 	flash('world')
@@ -28,7 +28,7 @@ def test():
 		'index.html'
 	)
 
-@app.route('/m')
+@application.route('/m')
 def m():
 	return render_template(
 		'index.html',
