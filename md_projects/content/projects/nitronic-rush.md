@@ -1,3 +1,5 @@
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/vNuSvuzPL10?rel=0" frameborder="0" allowfullscreen></iframe>
+
 ## Consumer Information
 <a href="https://nitronic-rush.com/" target="_blank">Official Nitronic Rush Website</a><br />
 <a href="http://facebook.com/NitronicRush" target="_blank">Team Nitronic Facebook Page</a><br />
