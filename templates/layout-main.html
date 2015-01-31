@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+	<title>Codesaru.com | Chris Barrett's Portfolio Site</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='codesaru.com.css') }}"/>
+</head>
+<body>
+	<div id="wrapper">
+	<div id="top_part">
+		<header>
+			<div id="top_links">
+				<ul>
+					<li><a href="codesaru.com">Home</a></li>
+					<li><a href="http://linkedin.com/in/chrishbarrett">LinkedIn</a></li>
+				</ul>
+			</div> <!-- /top_links -->
+			<div id="site_title">
+			<a><span id="title">Codesaru</span> | Chris Barrett's Portfolio Site</a>
+			</div>
+		</header>
+		<nav>
+			<div id="links">
+				Nav > test > here.
+			</div>
+		</nav>
+	</div> <!-- /top_part -->
+	<div id="top_main_spacer"></div>
+	<div id="main_part">
+		<div id="flashed_messages">
+			{% for message in get_flashed_messages() %}
+				<div class="flashed_message">{{ message }}</div>
+			{% endfor %}
+		</div> <!-- /flashed_messages -->
+		<div id="contents">
+			{% block contents %}{% endblock %}
+			<div id="page_title">
+				<h1>Page Title</h1>
+				<hr />
+			</div> <!-- /page_title -->
+			<article>
+				<h2>Article here</h2>
+				<p>Some interesting article text.</p>
+			</article>
+			<footer>
+				<hr/>
+				<p>&copy; 2011-2015 Chris Barrett</p>
+			</footer>
+		</div> <!-- /contents -->
+	</div> <!-- /main_part -->
+	</div> <!-- /wrapper -->
+</body>
+</html>
