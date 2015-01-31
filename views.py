@@ -1,4 +1,6 @@
-from flask import abort, flash, render_template
+import os
+from flask import abort, flash, Markup, render_template
+from markdown import markdown
 from app import app
 
 class Breadcrumb():
@@ -34,6 +36,19 @@ def index():
 		breadcrumbs=None
 	)
 
+@app.route('/stories/')
+def stories():
+	story_files = []
+	stories_dir = os.path.join(app.content_dir, 'stories')
+	for (dirpath, dirnames, filenames) in os.walk(stories_dir):
+		story_files.extend(filenames)
+		break
+	for md_file in story_files:
+		md_file = os.path.join(stories_dir, md_file)
+		flash(md_file)
+		md = Markup(markdown(open(md_file).read()))
+	return render_template('index.html', scratch=md, breadcrumbs=None)
+
 @app.route('/story/account-less-online-friend-oriented-leaderboards')
 def story_account_less_leaderboards():
 	return render_template(
@@ -45,4 +60,28 @@ def story_account_less_leaderboards():
 def test():
 	flash('Hello,')
 	flash('world')
-	return render_template('index.html')
+	return render_template(
+		'index.html',
+		scratch=Markup(markdown('templates/story/nr-leaderboards.md'))
+	)
+
+@app.route('/m')
+def m():
+	return render_template(
+		'index.html',
+		scratch=Markup(markdown("""
+Chapter
+=======
+
+Section
+-------
+
+[Google][]
+
+* List 1
+* List 2
+
+[Google]: http://google.com/
+		"""
+		))
+	)

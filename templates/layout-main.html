@@ -21,9 +21,11 @@
 		<nav>
 			<div id="links">
 				<ol class="breadcrumb">
-					{% for crumb in breadcrumbs.crumbs %}
-						<li{% if loop.last %} class="last_crumb"{% endif %}>{% if crumb.path %}<a href="{{ crumb.path }}">{% endif %}{{ crumb.text }}{% if crumb.path %}</a>{% endif %}</li>
-					{% endfor %}
+					{% if breadcrumbs %}
+						{% for crumb in breadcrumbs.crumbs %}
+							<li{% if loop.last %} class="last_crumb"{% endif %}>{% if crumb.path %}<a href="{{ crumb.path }}">{% endif %}{{ crumb.text }}{% if crumb.path %}</a>{% endif %}</li>
+						{% endfor %}
+					{% endif %}
 				</ol>
 			</div>
 		</nav>
@@ -36,6 +38,7 @@
 					<div class="flashed_message">{{ message }}</div>
 				{% endfor %}
 			</div> <!-- /flashed_messages -->
+			{{ scratch }}
 			{% block contents %}{% endblock %}
 			<!-- old
 			<div id="page_title">
