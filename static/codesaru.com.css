@@ -9,7 +9,7 @@ body {
 	padding: 0;
 	display: flex;
 	flex-wrap: nowrap;
-	grid-rows: auto auto auto;
+	grid-rows: auto auto auto auto;
 	flex-direction: column;
 	min-width: 800px;
 }

@@ -26,12 +26,12 @@
 	</div> <!-- /top_part -->
 	<div id="top_main_spacer"></div>
 	<div id="main_part">
-		<div id="flashed_messages">
-			{% for message in get_flashed_messages() %}
-				<div class="flashed_message">{{ message }}</div>
-			{% endfor %}
-		</div> <!-- /flashed_messages -->
 		<div id="contents">
+			<div id="flashed_messages">
+				{% for message in get_flashed_messages() %}
+					<div class="flashed_message">{{ message }}</div>
+				{% endfor %}
+			</div> <!-- /flashed_messages -->
 			{% block contents %}{% endblock %}
 			<div id="page_title">
 				<h1>Page Title</h1>
