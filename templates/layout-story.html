@@ -1,0 +1,9 @@
+{% extends "layout-main.html" %}
+{% block contents %}
+	<h1>{% block story_title %}{% endblock %}</h1>
+	<hr/>
+	<article>
+		<div class="publication_info">{% block publication_date %}{% endblock %}</div>
+		<div class="story_contents">{% block story_contents %}{% endblock %}</div>
+	</article>
+{% endblock %}

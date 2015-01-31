@@ -9,7 +9,7 @@ body {
 	padding: 0;
 	display: flex;
 	flex-wrap: nowrap;
-	grid-rows: auto auto auto auto;
+	grid-rows: auto auto auto auto auto;
 	flex-direction: column;
 	min-width: 800px;
 }
@@ -83,6 +83,10 @@ header {
 	text-shadow: 0px 2px 1px #1659AC;
 	white-space: nowrap;
 }
+#site_title a {
+	color: white;
+	text-decoration: none;
+}
 #site_title #title {
 	font-weight: bold;
 }
@@ -127,10 +131,13 @@ footer {
 	height: 1px;
 	background-color: white;
 }
+#bottom_spacer {
+	order: 35;
+	height: 20px;
+}
 
 #main_part {
 	order: 20;
-	//flex-basis: main-size;
 	display: flex;
 	flex-wrap: nowrap;
 	grid-rows: auto;
@@ -158,6 +165,9 @@ footer {
 	padding-right: 20px;
 }
 article {
+	font-size: 0.95em;
+	color: #494949;
+	line-height: 1.8em;
 }
 
 #flashed_messages {
@@ -171,12 +181,18 @@ article {
 	border-color: red;
 }
 
+.publication_info {
+	font-size: smaller;
+	color: gray;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	font-family: Helvetica, Arial, sans-serif;
+	color: #3B3B3B;
 }
 h1 {
-	font-size: 170%;
+	font-size: 1.45em;
 }
 hr {
 	/* http://css-tricks.com/examples/hrs/ */
@@ -184,4 +200,10 @@ hr {
 	height: 0;
 	border-top: 1px solid rgba(0,0,0,0.1);
 	border-bottom: 1px solid rgba(255,255,255,0.33);
+}
+ul {
+	padding-left: 2.0em;
+	list-style-type: circle;
+}
+ul li {
 }
