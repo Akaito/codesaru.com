@@ -66,8 +66,9 @@ class MdStory():
 		)
 
 def collect_projects():
-	projects.clear()
-	projects_sorted.clear()
+	global projects, projects_sorted
+	projects = {}
+	projects_sorted = []
 	index_data = json.load(open(path.join(projects_dir, 'index.json')))
 	for project in index_data['projects']:
 		if not project['enabled']:

@@ -31,8 +31,9 @@ class MdStory():
 		return obj
 
 def collect_stories():
-	stories.clear()
-	stories_sorted.clear()
+	global stories, stories_sorted
+	stories = {}
+	stories_sorted = []
 	index_data = json.load(open(path.join(stories_dir, 'index.json')))
 	for story in index_data['stories']:
 		if not story['enabled']:
