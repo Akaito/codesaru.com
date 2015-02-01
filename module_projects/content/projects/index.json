@@ -33,6 +33,18 @@
 			],
 			"image-main": "SuperdyneGraphViz.png",
 			"images": []
+		},
+		{
+			"title": "codesaru.com",
+			"path": "codesaru-com",
+			"content": "codesaru-com.md",
+			"date-begin": "2012-01-10",
+			"date-end": "2015-02-01",
+			"date-release": "2015-01-29",
+			"enabled": true,
+			"tags": [],
+			"image-main": "codesaru-jinja.png",
+			"images": []
 		}
 	]
 }
