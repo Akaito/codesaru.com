@@ -1,4 +1,4 @@
-This site was originally made with Drupal.  That was very nice for a while.  Eventually extensions, data backup and installation processes became a hassle.  To keep surprise maintenance to a minimum, the site was re-written with [Flask][].  Since long-term low-maintenance is the main goal on this rewrite, I've stuck with well-maintained tools and stayed away from fancy nice things.
+This site was originally made with Drupal.  That was very nice for a while.  Eventually extensions, data backup and installation processes became a hassle.  To keep surprise maintenance to a minimum, the site was re-written with [Flask][].  Since long-term low-maintenance is the main goal on this rewrite, I've stuck with well-maintained tools and stayed away from fancy things.
 
 Disclaimer: I'm not experienced with any of the tools being used here.  So don't take it as best-practice if you're learning, and be nice when judging it.
 
