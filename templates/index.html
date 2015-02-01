@@ -7,11 +7,12 @@
 	{# Stories #}
 	{% if stories %}
 		<h3><a href="{{ stories_path }}">Stories</a></h3>
-		<p>
-			{% for story in stories %}
-				<span class="publication_info">{{ story.date }}</span> &nbsp; <a href="{{ stories_path ~ story.path }}">{{ story.title }}</a><br/>
-			{% endfor %}
-		</p>
+		{% for story in stories %}
+			<div class="page_summary">
+				<span class="publication_info">{{ story.date }}</span>
+				<span class="page_summary_title"><a href="{{ stories_path ~ story.path }}">{{ story.title }}</a></span>
+			</div> <!-- /page_summary (story) -->
+		{% endfor %}
 	{% endif %}
 
 	{% if stories and projects %}<hr/>{% endif %}
@@ -19,11 +20,20 @@
 	{# Projects #}
 	{% if projects %}
 		<h3><a href="{{ projects_path }}">Projects</a></h3>
-		<p>
-			{% for proj in projects %}
-				<span class="publication_info">{{ proj.date_begin.split('-')[0] ~ ' - ' ~ proj.date_end.split('-')[0] }}</span> &nbsp; <a href="{{ projects_path ~ proj.path }}">{{ proj.title }}</a><br/>
-			{% endfor %}
-		</p>
+		<div class="project_summaries">
+		{% for proj in projects %}
+			<div class="project_summary">
+			<a href="{{ projects_path ~ proj.path }}">
+				<img src="{{ 'projects' ~ proj.image_main_url(thumb=true) }}"/>
+				<div class="publication_info"><span class="date_range">{{ proj.year_span_str() }}</span>
+				{%- if proj.date_release -%}
+					<span class="date_release">(released {{ proj.date_release }})</span>
+				{%- endif %}
+				</div><!-- /publication_info -->
+				<div class="project_summary_title">{{ proj.title }}</div>
+			</a></div> <!-- /project_summary (project) -->
+		{% endfor %}
+		</div> <!-- /project_summary_wrapper (projects) -->
 	{% endif %}
 	{% block story_summary %}{% endblock %}
 {% endblock %}

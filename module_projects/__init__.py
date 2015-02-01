@@ -14,7 +14,7 @@ projects_dir = path.join(content_dir, 'projects')
 projects = {}
 projects_sorted = []
 
-class MdStory():
+class MdProject():
 	def __init__(self):
 		self.md = None
 		self.title = None
@@ -80,7 +80,7 @@ def collect_projects():
 		if not project['enabled']:
 			continue
 		project['content'] = path.join(projects_dir, project['content'])
-		projects_sorted.append(MdStory.from_json(project))
+		projects_sorted.append(MdProject.from_json(project))
 		projects[project['path']] = projects_sorted[-1]
 
 def get_items():
