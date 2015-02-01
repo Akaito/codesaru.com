@@ -242,7 +242,7 @@ nav #links {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	margin-bottom: 1%;
+	margin-bottom: 3%;
 	/* border: 1px solid black; */
 	max-width: 320px;
 }
