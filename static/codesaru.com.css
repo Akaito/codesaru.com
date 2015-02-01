@@ -245,6 +245,10 @@ nav #links {
 	/* border: 1px solid black; */
 	max-width: 320px;
 }
+@media all and (max-width: 500px)
+.project_summary {
+	max-width: 160px;
+}
 .project_summary .publication_info {
 	display: flex;
 	flex-direction: row;
@@ -266,6 +270,11 @@ nav #links {
 	width: 320px;
 	height: 180px;
 	margin-bottom: 0;
+}
+@media all and (max-width: 500px)
+.project_summary img {
+	width: 160px;
+	height: 90px;
 }
 .project_summary a {
 	text-decoration: none;
