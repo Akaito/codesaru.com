@@ -1,6 +1,6 @@
 from flask import Flask
-from .md_stories import md_stories
-from .md_projects import md_projects
+from .module_stories import md_stories
+from .module_projects import md_projects
 
 application = Flask(__name__)
 application.debug = False

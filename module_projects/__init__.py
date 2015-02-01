@@ -12,6 +12,7 @@ content_dir = path.join(md_projects.root_path, 'content')
 projects_dir = path.join(content_dir, 'projects')
 
 projects = {}
+projects_sorted = []
 
 class MdStory():
 	def __init__(self):
@@ -65,13 +66,18 @@ class MdStory():
 		)
 
 def collect_projects():
+	projects.clear()
+	projects_sorted.clear()
 	index_data = json.load(open(path.join(projects_dir, 'index.json')))
 	for project in index_data['projects']:
 		if not project['enabled']:
 			continue
 		project['content'] = path.join(projects_dir, project['content'])
-		projects[project['path']] = MdStory.from_json(project)
-	pass
+		projects_sorted.append(MdStory.from_json(project))
+		projects[project['path']] = projects_sorted[-1]
+
+def get_items():
+	return projects_sorted
 
 collect_projects()
 

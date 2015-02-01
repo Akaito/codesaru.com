@@ -12,9 +12,11 @@ content_dir = path.join(md_stories.root_path, 'content')
 stories_dir = path.join(content_dir, 'stories')
 
 stories = {}
+stories_sorted = []
 
 class MdStory():
 	def __init__(self):
+		self.path = None
 		self.md = None
 		self.title = None
 		self.date = None
@@ -22,19 +24,25 @@ class MdStory():
 	@classmethod
 	def from_json(cls, jsn):
 		obj = cls()
+		obj.path = jsn['path']
 		obj.md = Markup(markdown(open(jsn['content']).read()))
 		obj.title = jsn['title']
 		obj.date = jsn['date']
 		return obj
 
 def collect_stories():
+	stories.clear()
+	stories_sorted.clear()
 	index_data = json.load(open(path.join(stories_dir, 'index.json')))
 	for story in index_data['stories']:
 		if not story['enabled']:
 			continue
 		story['content'] = path.join(stories_dir, story['content'])
-		stories[story['path']] = MdStory.from_json(story)
-	pass
+		stories_sorted.append(MdStory.from_json(story))
+		stories[story['path']] = stories_sorted[-1]
+
+def get_items():
+	return stories_sorted
 
 collect_stories()
 
