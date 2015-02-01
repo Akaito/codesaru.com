@@ -65,6 +65,12 @@ class MdStory():
 			)
 		)
 
+	def year_span_str(self):
+		return '%s - %s' % (
+			self.date_begin[:4],
+			self.date_end[:4]
+		)
+
 def collect_projects():
 	global projects, projects_sorted
 	projects = {}
@@ -89,12 +95,8 @@ def route_projects():
 		'projects.html',
 		breadcrumbs=[{'path': '/', 'text': 'Home'}],
 		md_projects_root_path=md_projects.root_path,
-		projects=projects
+		projects=projects_sorted
 	)
-
-@md_projects.route('/t')
-def route_t():
-	return md_projects.send_static_file('nitronic-rush/story_mode_flight_thumb_0.png')
 
 @md_projects.route('/<string:project>')
 def route_project(project):

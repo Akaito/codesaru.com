@@ -1,13 +1,13 @@
 {% extends "layout-main.html" %}
 {% block contents %}
 	<ul>
-	{% for project_key in projects %}
+	{% for proj in projects %}
 		<li><span class="publication_info">
-			{{- projects[project_key].date_begin.split('-')[0] ~ ' - ' ~ projects[project_key].date_end.split('-')[0] -}}
-			</span> <a href="{{ project_key }}">
-			{{- projects[project_key].title }}</a>
-			{%- if projects[project_key].date_release -%}
-				<span class="publication_info"> &nbsp;(released {{ projects[project_key].date_release }})</span>
+			{{- proj.year_span_str() -}}
+			</span> <a href="{{ proj.path }}">
+			{{- proj.title }}</a>
+			{%- if proj.date_release -%}
+				<span class="publication_info"> &nbsp;(released {{ proj.date_release }})</span>
 			{%- endif -%}
 		</li>
 	{% endfor %}
