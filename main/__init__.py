@@ -1,12 +1,13 @@
 """
-	csarucom.main
+	csarucom.bpmain
 	~~~~~~~~~~~~~
 
-	Index and other base application code.
+	Index and other base application code (and Blueprint).
 """
 
-from .. import factory
+from functools import wraps
 
+from .. import factory
 
 def create_app(settings_override=None):
 	"""Returns the codesaru.com application instance"""
@@ -23,3 +24,15 @@ def create_app(settings_override=None):
 def handle_error(e):
 	#return render_template('errors/%s.html' % e.code), e.code
 	abort(e)
+
+
+def route(bp, *args, **kwargs):
+	def decorator(f):
+		#@login_required
+		@bp.route(*args, **kwargs)
+		@wraps(f)
+		def wrapper(*args, **kwargs):
+			return f(*args, **kwargs)
+		return f
+
+	return decorator
