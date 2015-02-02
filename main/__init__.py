@@ -1,8 +1,8 @@
 """
-	csarucom.frontend
-	~~~~~~~~~~~~~~~~~
+	csarucom.main
+	~~~~~~~~~~~~~
 
-	launchpad frontend application package
+	Index and other base application code.
 """
 
 from .. import factory

@@ -14,5 +14,5 @@ application.secret_key = 'local-only-secret'
 from app import views
 '''
 
-from app import frontend
-application = frontend.create_app()
+from app import main
+application = main.create_app()
