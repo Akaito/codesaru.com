@@ -1,5 +1,5 @@
 """
-	csarucom.bpmain
+	csarucom.main (init)
 	~~~~~~~~~~~~~
 
 	Index and other base application code (and Blueprint).
