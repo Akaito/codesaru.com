@@ -5,9 +5,12 @@
 	Index and other base application code (and Blueprint).
 """
 
+from os import getcwd, path
+
 from functools import wraps
 
 from .. import factory
+
 
 def create_app(settings_override=None):
 	"""Returns the codesaru.com application instance"""

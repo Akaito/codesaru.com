@@ -11,13 +11,13 @@ def register_blueprints(app, package_name, package_path):
 	https://github.com/mattupstate/overholt
 	"""
 	blueprints = []
-	print("register_blueprints(%s, %s, %s)" % (app, package_name, package_path))
+	#print("register_blueprints(%s, %s, %s)" % (app, package_name, package_path))
 	for _, name, _ in pkgutil.iter_modules(package_path):
 		m = importlib.import_module('%s.%s' % (package_name, name))
 		for item in dir(m):
 			item = getattr(m, item)
 			if isinstance(item, Blueprint):
 				app.register_blueprint(item)
-				print("Registered a blueprint! (%s)" % item)
+				print("Registered a blueprint! (%s)" % name)
 			blueprints.append(item)
 	return blueprints
