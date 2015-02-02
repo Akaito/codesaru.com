@@ -14,5 +14,5 @@ application.secret_key = 'local-only-secret'
 from app import views
 '''
 
-from app import main
+import csarucom.main
 application = main.create_app()
