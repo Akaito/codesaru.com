@@ -1,4 +1,4 @@
-from os import path
+from os import path, walk
 
 from flask import Flask
 
@@ -10,11 +10,14 @@ def create_app(package_name, package_path, settings_override=None):
 
 	app.config.from_object('csarucom.settings')
 
-	# Find subdir modules (note: they'll be loaded into this main module)
-	for mod in ('test', 'bp_stories'):
-		package_path.append(path.join(package_path[0], mod))
-
-	#print('CREATE_APP(%s, %s, %s)' % (package_name, package_path, settings_override))
-	register_blueprints(app, package_name, package_path)
+	# discover what blueprint packages may be present
+	blueprint_dirs = package_path
+	for root, dirs, files in walk(path.join(package_path[0], 'blueprints')):
+		for dir in dirs:
+			blueprint_dirs.append(path.join(root, dir))
+			print('going to discover %s' % blueprint_dirs[-1])
+		break
+	# attempt to find all Blueprints within those packages and register them
+	register_blueprints(app, package_name, blueprint_dirs)
 
 	return app

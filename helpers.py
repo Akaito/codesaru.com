@@ -3,7 +3,7 @@ import importlib
 
 from flask import Blueprint
 
-def register_blueprints(app, package_name, package_path):
+def register_blueprints(app, package_name, blueprint_dirs):
 	"""Register all Blueprints found in all modules.
 
 	This, and much other app structure-oriented code, comes from
@@ -11,8 +11,7 @@ def register_blueprints(app, package_name, package_path):
 	https://github.com/mattupstate/overholt
 	"""
 	blueprints = []
-	#print("register_blueprints(%s, %s, %s)" % (app, package_name, package_path))
-	for _, name, _ in pkgutil.iter_modules(package_path):
+	for _, name, _ in pkgutil.iter_modules(blueprint_dirs):
 		m = importlib.import_module('%s.%s' % (package_name, name))
 		for item in dir(m):
 			item = getattr(m, item)
