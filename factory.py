@@ -11,7 +11,8 @@ def create_app(package_name, package_path, settings_override=None):
 	app.config.from_object('csarucom.settings')
 
 	# Find subdir modules (note: they'll be loaded into this main module)
-	package_path.append(path.join(package_path[0], 'test'))
+	for mod in ('test', 'bp_stories'):
+		package_path.append(path.join(package_path[0], mod))
 
 	#print('CREATE_APP(%s, %s, %s)' % (package_name, package_path, settings_override))
 	register_blueprints(app, package_name, package_path)
