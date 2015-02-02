@@ -1,3 +1,4 @@
+'''
 from flask import Flask
 from .module_stories import md_stories
 from .module_projects import md_projects
@@ -11,4 +12,7 @@ application.register_blueprint(md_projects, url_prefix='/projects')
 application.secret_key = 'local-only-secret'
 
 from app import views
+'''
 
+from app import frontend
+application = frontend.create_app()
