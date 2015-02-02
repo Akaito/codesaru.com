@@ -4,7 +4,9 @@
 
 from flask import Blueprint, render_template
 
-from . import route
+print('TEST TEST')
+
+from ... import route
 
 bp = Blueprint(
 	'test',

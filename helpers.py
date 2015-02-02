@@ -15,32 +15,18 @@ def register_blueprints(app, package_name, blueprint_dirs):
 	https://github.com/mattupstate/overholt
 	"""
 	blueprints = []
-	if False:
-		#for _, name, ispkg in pkgutil.walk_packages(blueprint_dirs):
-		for _, name, ispkg in pkgutil.iter_modules(blueprint_dirs):
-			print('iter mod: %s (ispkg? %s)' % (name, ispkg))
-			#import name
-			print('m = import_module(%s.%s)' % (package_name, name))
-			m = importlib.import_module('%s.%s' % (package_name, name))
+	if True:
+		for plugin_dir in blueprint_dirs:
+			plugin_name = path.split(plugin_dir)[-1]
+			#print('plugin_dir: %s -- name %s' % (plugin_dir, plugin_name))
+			if plugin_name == 'main':
+				m = importlib.import_module('csarucom.main')
+			else:
+				m = importlib.import_module('.plugins.%s' % plugin_name, 'csarucom.main')
 			for item in dir(m):
 				item = getattr(m, item)
 				if isinstance(item, Blueprint):
 					app.register_blueprint(item)
-					print("Registered a blueprint! (%s)" % name)
+					print("Registered a blueprint (%s) from plugin (%s)" % ('?', plugin_name))
 				blueprints.append(item)
-	elif False:
-		for pkg_dir in blueprint_dirs:
-			pkg_name = path.split(pkg_dir)[-1]
-			print('pkg_dir: %s -- named %s' % (pkg_dir, pkg_name))
-			run_module(pkg_name)
-	else:
-		print('name %s' % __name__)
-		#m = importlib.import_module('csarucom.main.plugins.n')
-		m = importlib.import_module('.plugins.n', 'csarucom.main')
-		for item in dir(m):
-			item = getattr(m, item)
-			if isinstance(item, Blueprint):
-				app.register_blueprint(item)
-				#print("Registered a blueprint! (%s)" % name)
-			blueprints.append(item)
 	return blueprints
