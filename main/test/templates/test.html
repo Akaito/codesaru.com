@@ -1,0 +1,8 @@
+{% extends "layout-main.html" %}
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='test.css') }}"/>
+{% endblock %}
+
+{% block contents %}
+	<h2 class="test">css test</h2>
+{% endblock %}
