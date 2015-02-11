@@ -1,3 +1,2 @@
-print('TEST INIT')
-import importlib
-importlib.import_module('csarucom.main.plugins.test.test')
+#print('TEST INIT')
+from .test import bp

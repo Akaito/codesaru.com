@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-print('N INIT')
+#print('N INIT')
 
 from ... import route
 

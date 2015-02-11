@@ -27,6 +27,6 @@ def register_blueprints(app, package_name, blueprint_dirs):
 				item = getattr(m, item)
 				if isinstance(item, Blueprint):
 					app.register_blueprint(item)
-					print("Registered a blueprint (%s) from plugin (%s)" % ('?', plugin_name))
+					#print("Registered a blueprint (%s) from plugin (%s)" % (item, plugin_name))
 				blueprints.append(item)
 	return blueprints
