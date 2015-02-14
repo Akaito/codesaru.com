@@ -19,14 +19,14 @@ def register_blueprints(app, package_name, blueprint_dirs):
 		for plugin_dir in blueprint_dirs:
 			plugin_name = path.split(plugin_dir)[-1]
 			#print('plugin_dir: %s -- name %s' % (plugin_dir, plugin_name))
-			if plugin_name == 'main':
-				m = importlib.import_module('csarucom.main')
-			else:
-				m = importlib.import_module('.plugins.%s' % plugin_name, 'csarucom.main')
+			m = importlib.import_module('.plugins.%s' % plugin_name, 'csarucom.main')
+			if m is None:
+				continue
+
 			for item in dir(m):
 				item = getattr(m, item)
 				if isinstance(item, Blueprint):
 					app.register_blueprint(item)
-					#print("Registered a blueprint (%s) from plugin (%s)" % (item, plugin_name))
+					print("Registered a blueprint (%s) from plugin (%s)" % (item, plugin_name))
 				blueprints.append(item)
 	return blueprints

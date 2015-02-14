@@ -2,10 +2,8 @@
 	csarucom.main (init)
 	~~~~~~~~~~~~~
 
-	Index and other base application code (and Blueprint).
+	Base application code (no templates or views).
 """
-
-from os import getcwd, path
 
 from functools import wraps
 
