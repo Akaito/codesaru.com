@@ -18,4 +18,5 @@ bp = Blueprint(
 
 @route(bp, '/test')
 def route_t():
+	#return render_template('main-test.html')
 	return render_template('test.html')
