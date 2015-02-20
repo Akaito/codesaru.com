@@ -2,7 +2,8 @@
 	csarucom.main (init)
 	~~~~~~~~~~~~~
 
-	Base application code (no templates or views).
+	Main website's base code.
+	Templates, views, etc. are all in plugins.
 """
 
 from functools import wraps
