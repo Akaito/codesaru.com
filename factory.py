@@ -1,3 +1,7 @@
+'''
+*  App creation.  Uses helpers to discover plugins.
+'''
+
 from os import path, walk
 
 from flask import Flask

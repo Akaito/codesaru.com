@@ -1,3 +1,7 @@
+'''
+*  Finds and registers blueprints in plugin directories.
+'''
+
 import pkgutil
 import importlib
 from runpy import run_module # testing
