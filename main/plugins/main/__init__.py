@@ -11,10 +11,8 @@ from ... import route
 
 
 bp = Blueprint('bpmain', __name__, template_folder='templates')
-#print(' -- MAIN BP')
 
 @route(bp, '/')
 def index():
-	#print(' VISITED /')
 	return render_template('main-test.html')
-	return render_template('test.html')
+	return render_template('index.html')
