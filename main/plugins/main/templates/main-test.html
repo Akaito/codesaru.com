@@ -1,9 +1,14 @@
 {% extends "layout-main.html" %}
+{% import 'stories-export.html' as stories_jinja %}
 
 {% block nav_breadcrumbs %}
 	<li class="current">Home</li>
 {% endblock nav_breadcrumbs %}
 
 {% block contents %}
-	<h3>layout test</h3>
+	<h3>main-test.html</h3>
+
+	{# Stories #}
+	{{ stories_jinja.stories_list_short(stories_plugin) }}
+
 {% endblock contents %}
