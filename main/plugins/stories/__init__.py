@@ -25,7 +25,7 @@ stories_dir = path.join(content_dir, 'stories')
 stories = {}
 stories_sorted = []
 
-class MdStory():
+class StoryBp():
 	def __init__(self):
 		self.path = None
 		self.md = None
@@ -50,7 +50,7 @@ def collect_stories():
 		if not story['enabled']:
 			continue
 		story['content'] = path.join(stories_dir, story['content'])
-		stories_sorted.append(MdStory.from_json(story))
+		stories_sorted.append(StoryBp.from_json(story))
 		stories[story['path']] = stories_sorted[-1]
 
 def get_items():
@@ -68,7 +68,7 @@ def route_stories():
 		stories=stories
 	)
 
-@route(stories_bp, '/<story>')
+@route(stories_bp, '/<string:story>')
 def route_story(story):
 	#collect_stories()
 	if story not in stories:
