@@ -1,22 +1,26 @@
 <!doctype html>
+{% import 'globals.html' as globals %}
 <html>
 <head>
-	<title>Codesaru.com | Chris Barrett's Portfolio Site</title>
+    <title>{{ globals.site_short_desc }} | {{ globals.site_url }}</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='codesaru.com.css') }}"/>
 	{% block head %}{% endblock %}
 </head>
 <body>
-	<div id="wrapper">
+	<div class="body-wrapper" id="wrapper">
 	<div id="top_part">
 		<header>
-			<div id="top_links">
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="http://linkedin.com/in/chrishbarrett">LinkedIn</a></li>
-				</ul>
-			</div> <!-- /top_links -->
+			{% if globals.top_links %}
+				<div id="top_links">
+					<ul>
+						{% for link in globals.top_links %}
+							<li><a href="{{ link.url }}">{{ link.text }}</a></li>
+						{% endfor %}
+					</ul>
+				</div> <!-- /top_links -->
+			{% endif %}
 			<div id="site_title">
-				<a href="/"><span id="title">Codesaru</span>&nbsp;&nbsp;Chris Barrett's Portfolio Site</a>
+				<a href="/"><span id="title">{{ globals.site_title }}</span>&nbsp;&nbsp;{{ globals.site_short_desc }}</a>
 			</div> <!-- /site_title -->
 		</header>
 		<nav>
@@ -43,7 +47,7 @@
 			{% block contents %}{% endblock %}
 			<footer>
 				<hr/>
-				<p>&copy; 2011-2015 Chris Barrett</p>
+				<p>&copy; 2011-2015 {{ globals.owner_name }}</p>
 			</footer>
 		</div> <!-- /contents -->
 	</div> <!-- /main_part -->

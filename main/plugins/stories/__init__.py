@@ -1,20 +1,31 @@
-from flask import abort, Blueprint, flash, Markup, render_template
-import json
-from markdown import markdown
-from os import path, walk
+"""
+	csarucom.stories (init)
+	~~~~~~~~~~~~~
+"""
 
-md_stories = Blueprint('md_stories', __name__,
+from os import path, walk
+import json
+
+from flask import abort, Blueprint, flash, Markup, render_template, url_for
+from markdown import markdown
+
+from ... import route
+
+stories_bp = Blueprint(
+	'stories_bp',
+	__name__,
+	url_prefix='/stories',
 	template_folder='templates',
 	static_folder='static'
 )
 
-content_dir = path.join(md_stories.root_path, 'content')
+content_dir = path.join(stories_bp.root_path, 'content')
 stories_dir = path.join(content_dir, 'stories')
 
 stories = {}
 stories_sorted = []
 
-class MdStory():
+class StoryBp():
 	def __init__(self):
 		self.path = None
 		self.md = None
@@ -39,7 +50,7 @@ def collect_stories():
 		if not story['enabled']:
 			continue
 		story['content'] = path.join(stories_dir, story['content'])
-		stories_sorted.append(MdStory.from_json(story))
+		stories_sorted.append(StoryBp.from_json(story))
 		stories[story['path']] = stories_sorted[-1]
 
 def get_items():
@@ -47,17 +58,17 @@ def get_items():
 
 collect_stories()
 
-@md_stories.route('/')
+@route(stories_bp, '/')
 def route_stories():
 	#collect_stories()
 	return render_template(
 		'stories.html',
 		breadcrumbs=[{'path': '/', 'text': 'Home'}],
-		md_stories_root_path=md_stories.root_path,
+		stories_bp_root_path=stories_bp.root_path,
 		stories=stories
 	)
 
-@md_stories.route('/<story>')
+@route(stories_bp, '/<string:story>')
 def route_story(story):
 	#collect_stories()
 	if story not in stories:
@@ -67,7 +78,7 @@ def route_story(story):
 		'story.html',
 		breadcrumbs=[
 			{'path': '/', 'text': 'Home'},
-			{'path': '/stories', 'text': 'Stories'}
+			{'path': url_for('.route_stories'), 'text': 'Stories'}
 		],
 		title=md_story.title,
 		date=md_story.date,

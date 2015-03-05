@@ -1,15 +1,25 @@
-from flask import abort, Blueprint, flash, Markup, render_template, url_for
-import json
-from markdown import markdown
-from os import path, walk
+"""
+	csarucom.projects (init)
+	~~~~~~~~~~~~~
+"""
 
-md_projects = Blueprint('md_projects', __name__,
+from os import path, walk
+import json
+
+from flask import abort, Blueprint, flash, Markup, render_template, url_for
+from markdown import markdown
+
+from ... import route
+
+projects_bp = Blueprint(
+	'projects_bp',
+	__name__,
+	url_prefix='/projects',
 	template_folder='templates',
 	static_folder='static'
 )
 
-content_dir = path.join(md_projects.root_path, 'content')
-projects_dir = path.join(content_dir, 'projects')
+content_dir = path.join(projects_bp.root_path, 'content')
 
 projects = {}
 projects_sorted = []
@@ -44,10 +54,10 @@ class MdProject():
 
 	def image_main_url(self, thumb):
 		return url_for(
-			'.static',
-			filename='%s%s/%s' % (
+			'projects_bp.static',
+			filename='%s%s%s' % (
 				self.path,
-				'/thumbs' if thumb else '',
+				'/thumbs/' if thumb else '/',
 				self.image_main
 			)
 		)
@@ -75,11 +85,11 @@ def collect_projects():
 	global projects, projects_sorted
 	projects = {}
 	projects_sorted = []
-	index_data = json.load(open(path.join(projects_dir, 'index.json')))
+	index_data = json.load(open(path.join(content_dir, 'index.json')))
 	for project in index_data['projects']:
 		if not project['enabled']:
 			continue
-		project['content'] = path.join(projects_dir, project['content'])
+		project['content'] = path.join(content_dir, project['content'])
 		projects_sorted.append(MdProject.from_json(project))
 		projects[project['path']] = projects_sorted[-1]
 
@@ -88,35 +98,33 @@ def get_items():
 
 collect_projects()
 
-@md_projects.route('/')
+@route(projects_bp, '/')
 def route_projects():
 	#collect_projects()
 	return render_template(
 		'projects.html',
 		breadcrumbs=[{'path': '/', 'text': 'Home'}],
-		md_projects_root_path=md_projects.root_path,
+		md_projects_root_path=projects_bp.root_path,
 		projects=projects_sorted
 	)
 
-@md_projects.route('/<string:project>')
+@route(projects_bp, '/<string:project>')
 def route_project(project):
 	#collect_projects()
-	if '..' in project or project.startswith('/'):
-		abort(404)
 	if project not in projects:
 		abort(404)
-	md_project = projects[project]
+	project_obj = projects[project]
 	return render_template(
 		'project.html',
 		breadcrumbs=[
 			{'path': '/', 'text': 'Home'},
-			{'path': '/projects', 'text': 'Projects'}
+			{'path': url_for('.route_projects'), 'text': 'Projects'}
 		],
-		title=md_project.title,
-		date_begin=md_project.date_begin.split('-')[0],
-		date_end=md_project.date_end.split('-')[0],
-		date_release=md_project.date_release,
-		content=md_project.md,
-		proj=md_project
+		title=project_obj.title,
+		date_begin=project_obj.date_begin.split('-')[0],
+		date_end=project_obj.date_end.split('-')[0],
+		date_release=project_obj.date_release,
+		content=project_obj.md,
+		proj=project_obj
 	)
 
