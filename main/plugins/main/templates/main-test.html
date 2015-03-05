@@ -7,10 +7,12 @@
 {% endblock nav_breadcrumbs %}
 
 {% block contents %}
-	<h3>main-test.html</h3>
-
 	{# Stories #}
 	{{ stories_jinja.stories_list_short(stories_plugin) }}
+
+	{% if stories_jinja and projects_jinja %}
+		<hr/>
+	{% endif %}
 
 	{# Projects #}
 	{{ projects_jinja.projects_list_short(projects_plugin) }}
