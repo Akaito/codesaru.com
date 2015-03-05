@@ -20,7 +20,6 @@ projects_bp = Blueprint(
 )
 
 content_dir = path.join(projects_bp.root_path, 'content')
-projects_dir = path.join(content_dir, 'projects')
 
 projects = {}
 projects_sorted = []
@@ -55,10 +54,10 @@ class MdProject():
 
 	def image_main_url(self, thumb):
 		return url_for(
-			'.static',
-			filename='%s%s/%s' % (
+			'projects_bp.static',
+			filename='%s%s%s' % (
 				self.path,
-				'/thumbs' if thumb else '',
+				'/thumbs/' if thumb else '/',
 				self.image_main
 			)
 		)
@@ -86,11 +85,11 @@ def collect_projects():
 	global projects, projects_sorted
 	projects = {}
 	projects_sorted = []
-	index_data = json.load(open(path.join(projects_dir, 'index.json')))
+	index_data = json.load(open(path.join(content_dir, 'index.json')))
 	for project in index_data['projects']:
 		if not project['enabled']:
 			continue
-		project['content'] = path.join(projects_dir, project['content'])
+		project['content'] = path.join(content_dir, project['content'])
 		projects_sorted.append(MdProject.from_json(project))
 		projects[project['path']] = projects_sorted[-1]
 
@@ -119,7 +118,7 @@ def route_project(project):
 		'project.html',
 		breadcrumbs=[
 			{'path': '/', 'text': 'Home'},
-			{'path': '/projects', 'text': 'Projects'}
+			{'path': url_for('.route_projects'), 'text': 'Projects'}
 		],
 		title=project_obj.title,
 		date_begin=project_obj.date_begin.split('-')[0],
