@@ -32,9 +32,9 @@ layout: default
         </div> <!-- /post_pictures_main -->
         {% if page.images_sub %}
           <div class="post_pictures_sub">
-            {% for i in page.images_sub %}
-              <a href="{{ "/assets/images/" | relative_url }}{{ i }}">
-                <img src="{{ "/assets/images/thumbs/" | relative_url }}{{ i }}"/>
+            {% for image in page.images_sub %}
+              <a href="{{ "/assets/images/" | relative_url }}{{ image }}">
+                <img src="{{ "/assets/images/thumbs/" | relative_url }}{{ image }}"/>
               </a>
             {% endfor %}
           </div> <!-- /post_pictures_sub -->
