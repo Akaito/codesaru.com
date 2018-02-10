@@ -6,3 +6,4 @@ flask-env
 virtualenv.py
 private/*
 
+*.vim
