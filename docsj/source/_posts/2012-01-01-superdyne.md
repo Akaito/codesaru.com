@@ -6,7 +6,7 @@ date_begin: 2010
 date_end:   2012
 categories: projects
 slug:       superdyne
-images:     SuperdyneGraphViz.png
+image_main: SuperdyneGraphViz.png
 ---
 <div class="post_pictures">
   <div class="post_pictures_main">
