@@ -4,16 +4,23 @@ layout: default
 {% assign date_format = "%Y-%m-%d" %}
 <div id="md_project_title">
   <h1>{{ page.title | escape }}</h1>
-  {% if page.date_begin and page.date_end %}
-  <span class="publication_info">{{ page.date_begin}} - {{ page.date_end }}</span>
-  {% else %}
-  <span class="publication_info">{{ page.date | date: date_format }}</span>
-  {% endif %}
+  <span class="publication_info">
+    {% if page.date_begin and page.date_end %}
+      {{ page.date_begin}} - {{ page.date_end }}
+    {% else %}
+      {{ page.date | date: date_format }}
+    {% endif %}
+
+    {% if page.date_release %}
+      &nbsp;&nbsp;(released {{ page.date_release | date: date_format }})
+    {% endif %}
+  </span> <!-- /publication_info -->
 
   <hr/>
 </div> <!-- /project_title -->
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <br/>
 
   <div class="post-content" itemprop="articleBody">
     {% if page.image_main %}
@@ -24,7 +31,7 @@ layout: default
           </a>
         </div> <!-- /post_pictures_main -->
         {% if page.images_sub %}
-          <div class=post_pictures_sub">
+          <div class="post_pictures_sub">
             {% for i in page.images_sub %}
               <a href="{{ "/assets/images/" | relative_url }}{{ i }}">
                 <img src="{{ "/assets/images/thumbs/" | relative_url }}{{ i }}"/>

@@ -297,6 +297,17 @@ nav #links {
 	color: #0062A0;
 }
 
+.post_pictures {
+  float: right;
+  margin-left: 2em;
+  margin-bottom: 1.5em;
+}
+.post_pictures_sub {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 #md_project_title {
   margin-top: 1em;
 }

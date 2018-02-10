@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      "Nitronic Rush"
-date:       2011-11-11 00:00:00 -0700
+date:       2011-11-11
 date_begin: 2010
 date_end:   2012
-date_release: 2011-11-11 00:00:00 -0700
+date_release: 2011-11-11
 categories: projects
 order:      100
 slug:       nitronic-rush
