@@ -4,10 +4,14 @@ title:      "Nitronic Rush"
 date:       2011-11-11 00:00:00 -0700
 date_begin: 2010
 date_end:   2012
+date_release: 2011-11-11 00:00:00 -0700
 categories: projects
 slug:       nitronic-rush
 image_main: story_mode_flight.png
-images_sub: [hardcore_mode.png, spike_barrel_obstacle.png, ghost_cars.png]
+images_sub:
+  - hardcore_mode.png
+  - spike_barrel_obstacle.png
+  - ghost_cars.png
 ---
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/vNuSvuzPL10?rel=0" frameborder="0" allowfullscreen></iframe>
 

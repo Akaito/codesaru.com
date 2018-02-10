@@ -4,23 +4,54 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-  
   {{ content }}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+  {% assign date_format = "%Y-%m-%d" %}
 
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+  <h3><a href="{{ "/stories/" | relative_url }}">Stories</a></h3>
+  {% for story in site.categories['stories'] %}
+    <div class="page_summary">
+      <span class="publication_info">{{ story.date | date: date_format }}</span>
+      <span class="page_summary_title"><a href="{{ story.url | relative_url }}">{{ story.title }}</a></span>
+    </div> <!-- /page_summary (story) -->
+  {% endfor %}
+
+  <hr/>
+
+  <h3><a href="{{ "/projects/" | relative_url }}">Projects</a></h3>
+  <div class="project_summaries">
+  {% for project in site.categories['projects'] %}
+    <div class="project_summary">
+      <a href="{{ project.url | relative_url }}">
+        <img src="{{ "assets/images/thumbs/" | relative_url }}{{ project.image_main }}"/>
+        <div class="publication_info">
+          {% if project.date_begin and project.date_end %}
+            <span class="date_range">{{ project.date_begin }} - {{ project.date_end }}</span>
+          {% endif %}
+          {% if project.date_release %}
+            <span class="date_release">(released {{ project.date_release | date: date_format }})</span>
+          {% endif %}
+        </div>
+        <div class="project_summary_title">{{ project.title }}</div>
+      </a>
+    </div> <!-- /project_summary (project) -->
+  {% endfor %}
+  </div> <!-- /project_summaries -->
+
+  {% comment %}
+  <hr/>
+
+  {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h2>
+    </li>
+  {% endfor %}
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {% endcomment %}
 
 </div>
