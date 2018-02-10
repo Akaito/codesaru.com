@@ -297,6 +297,17 @@ nav #links {
 	color: #0062A0;
 }
 
+#md_project_title {
+  margin-top: 1em;
+}
+#md_project_title h1 {
+  display: inline;
+}
+#md_project_title .publication_info {
+  display: inline;
+  margin-left: 1%;
+}
+
 .publication_info {
 	font-size: smaller;
 	color: gray;
