@@ -11,6 +11,21 @@ highlighted_projects:
   {% assign date_format = "%Y-%m-%d" %}
 
   <h3><a href="{{ "/stories/" | relative_url }}">Stories</a></h3>
+  <p>data: {{ site.data }}</p>
+  <p>stories: {{ site.data.stories }}</p>
+  {% for story in site.data.stories %}
+    <p>{{ story }}</p>
+    {% comment %}
+    <div class="page_summary">
+      <span class="publication_info">{{ story.date | date: date_format }}</span>
+      <span class="page_summary_title"><a href="{{ story.url | relative_url }}">{{ story.title }}</a></span>
+    </div> <!-- /page_summary (story) -->
+    {% endcomment %}
+  {% endfor %}
+
+  <hr/>
+
+  <h3><a href="{{ "/stories/" | relative_url }}">Stories</a></h3>
   {% for story in site.categories['stories'] %}
     <div class="page_summary">
       <span class="publication_info">{{ story.date | date: date_format }}</span>
