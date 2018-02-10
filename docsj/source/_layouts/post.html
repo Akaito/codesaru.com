@@ -28,6 +28,24 @@ layout: default
   </header>
 
   <div class="post-content" itemprop="articleBody">
+    {% if page.image_main %}
+      <div class="post_pictures">
+        <div class="post_pictures_main">
+          <a href="{{ "/assets/images/" | relative_url }}{{ page.image_main }}">
+            <img src="{{ "/assets/images/thumbs/" | relative_url }}{{ page.image_main }}"/>
+          </a>
+        </div> <!-- /post_pictures_main -->
+        {% if page.images_sub %}
+          <div class=post_pictures_sub">
+            {% for i in page.images_sub %}
+              <a href="{{ "/assets/images/" | relative_url }}{{ i }}">
+                <img src="{{ "/assets/images/thumbs/" | relative_url }}{{ i }}"/>
+              </a>
+            {% endfor %}
+          </div> <!-- /post_pictures_sub -->
+        {% endif %}
+      </div> <!-- /post_pictures -->
+    {% endif %}
     {{ content }}
   </div>
 

@@ -8,15 +8,6 @@ categories: projects
 slug:       superdyne
 image_main: SuperdyneGraphViz.png
 ---
-<div class="post_pictures">
-  <div class="post_pictures_main">
-    <a href="{{ "/assets/images/SuperdyneGraphViz.png" }}">
-      <img src="{{ "/assets/images/thumbs/SuperdyneGraphViz.png" }}"/>
-      <!-- <img src="{{ "/assets/images/thumbs/SuperdyneGraphViz.png" | absolute_url }}"/> -->
-    </a>
-  </div> <!-- post_pictures_main -->
-</div> <!-- /post_pictures -->
-
 As part of working on [Nitronic Rush][], I worked with another technical director/architect (<a href="http://www.linkedin.com/pub/robert-onulak/12/2a1/564" target="_blank">Robert Onulak</a>) of Team Nitronic's sister team, <a href="http://teamdiscotank.com/" target="_blank">Disco Tank</a>, whom made the game "<a href="http://news.digipen.edu/student-projects/solstice-featured-at-tokyo-game-shows-sense-of-wonder-night/#.VMzAjf54rNo" target="_blank">Solstice</a>".  We created the "Superdyne" architecture to be used by both teams.  Superdyne was additionally used in a couple of projects by team members.
 
 Following is a list of most of Superdyne's features.  **Listed in bold** are the ones on which I was a significant part in creating.
