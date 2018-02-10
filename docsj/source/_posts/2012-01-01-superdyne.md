@@ -1,10 +1,11 @@
 ---
 layout:     post
 title:      "Superdyne Common Architecture"
-date:       2011-08-01 00:00:00 -0700
+date:       2011-08-01 12:00:00 -0700
 date_begin: 2010
 date_end:   2012
 categories: projects
+order:      200
 slug:       superdyne
 image_main: SuperdyneGraphViz.png
 ---

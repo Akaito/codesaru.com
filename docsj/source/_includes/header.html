@@ -13,7 +13,7 @@
     </div> <!-- /top_links -->
 
     <div id="site_title"> <!-- (csaru id) -->
-      <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      <a class="site-title" href="{{ "/" | relative_url }}"><span id="title">{{ site.title | escape }}</span>&nbsp;&nbsp;{{ site.description }}</a>
     </div>
   
   {% comment %}

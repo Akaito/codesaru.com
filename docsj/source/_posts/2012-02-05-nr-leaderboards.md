@@ -1,8 +1,9 @@
 ---
 layout:     post
 title:      "Global and Friend Leaderboards Without Accounts"
-date:       2012-02-05 00:00:00 -0700
+date:       2012-02-05 12:00:00 -0700
 categories: stories
+order:      250
 slug:       nr-leaderboard
 ---
 When making the online leaderboard for [Nitronic Rush](/projects/nitronic-rush), these were the considerations:

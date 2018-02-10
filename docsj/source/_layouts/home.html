@@ -1,5 +1,7 @@
 ---
 layout: default
+highlighted_projects:
+  - 
 ---
 
 <div class="home">
@@ -20,7 +22,8 @@ layout: default
 
   <h3><a href="{{ "/projects/" | relative_url }}">Projects</a></h3>
   <div class="project_summaries">
-  {% for project in site.categories['projects'] %}
+  {% assign projects_sorted = site.categories['projects'] | sort: 'order' %}
+  {% for project in projects_sorted %}
     <div class="project_summary">
       <a href="{{ project.url | relative_url }}">
         <img src="{{ "assets/images/thumbs/" | relative_url }}{{ project.image_main }}"/>

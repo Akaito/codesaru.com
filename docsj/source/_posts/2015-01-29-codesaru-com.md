@@ -1,11 +1,12 @@
 ---
 layout:       post
 title:        "codesaru.com"
-date:         2015-01-29 01:01:01 -0700
+date:         2015-01-29 12:00:00 -0700
 date_begin:   2012
 date_end:     2018
-date_release: 2015-01-29 01:01:01 -0700
+date_release: 2015-01-29 12:00:00 -0700
 categories:   projects
+order:        1000
 slug:         codesaru-com
 image_main:   codesaru-jinja.png
 ---
