@@ -4,7 +4,11 @@ layout: default
 {% assign date_format = "%Y-%m-%d" %}
 <div id="md_project_title">
   <h1>{{ page.title | escape }}</h1>
+  {% if page.date_begin and page.date_end %}
   <span class="publication_info">{{ page.date_begin}} - {{ page.date_end }}</span>
+  {% else %}
+  <span class="publication_info">{{ page.date | date: date_format }}</span>
+  {% endif %}
 
   <hr/>
 </div> <!-- /project_title -->
