@@ -28,6 +28,8 @@ github_username:  Akaito
 # Build settings
 markdown: kramdown
 theme: minima
+include:
+  - "_data"
 plugins:
   - jekyll-feed
 

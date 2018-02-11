@@ -81,4 +81,4 @@ Kyle Holdwick, Jordan Hemenway, Robert Onulak, Steven Liss, Westley Hennigh
 *Special Thanks*  
 Josh Davis, Ben Strukus, Casey Spurgeon, Richard Silva, Erik Mohrmann, Chris Howard, Cody Pritchard, Cameron Jacobson, Paul Flores, Josh Claeys, Chin Fong, Shawn Pearce
 
-[online leaderboards]: /stories/nr-leaderboard
+[online leaderboards]: /stories/nr-leaderboard.html

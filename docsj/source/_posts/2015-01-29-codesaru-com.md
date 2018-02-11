@@ -22,8 +22,8 @@ This site's main code can be found in [this repo][codesaru.com repo].  To run it
 
 [codesaru.com repo]: https://github.com/Akaito/codesaru.com
 [codesaru.com local repo]: https://github.com/Akaito/codesaru.com-local
-[css]: http://en.wikipedia.org/wiki/Cascading_Style_Sheets
-[flask]: http://flask.pocoo.org/
-[html]: http://en.wikipedia.org/wiki/HTML
-[markdown]: http://daringfireball.net/projects/markdown/
+[css]: https://en.wikipedia.org/wiki/Cascading_Style_Sheets
+[flask]: https://flask.pocoo.org/
+[html]: https://en.wikipedia.org/wiki/HTML
+[markdown]: https://daringfireball.net/projects/markdown/
 [python]: https://www.python.org/

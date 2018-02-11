@@ -1,7 +1,20 @@
+{% comment %}
+Breadcrumbs tricks from https://mademistakes.com/articles/using-jekyll-2016/
+{% endcomment %}
+
+{% assign page_slug = page.url | remove_first: '/' | split: '/' %}
+{% assign slug_first = page_slug[0] %}
+{% assign slug = site.data.slugs[slug_first] %}
+
 <nav>
   <div id="links">
-    <ol class="breadcrumb">
-      _includes/nav.html TODO TODO TODO
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <li>
+        <a href="{{ "/" | absolute_url }}">Home</a>
+      </li>
+      <li class="last_crumb">
+        <a href="{{ slug_first | relative_url }}">{{ slug.name }}</a>
+      </li>
     </ol>
   </div> <!-- /links -->
 </nav>

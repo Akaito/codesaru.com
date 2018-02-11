@@ -70,7 +70,7 @@ Following is a list of most of Superdyne's features.  **Listed in bold** are the
 	<li>Basic threading library: <em>Thread</em>, <em>Mutex</em>, <em>Lock</em>, <em>ActiveObject</em>, <em>ThreadPool</em>, and <em>WorkerThread</em> types.  Not used by <a href="/projects/nitronic-rush">Nitronic Rush</a>.</li>
 </ul>
 
-[Nitronic Rush]: /projects/nitronic-rush
+[Nitronic Rush]: /projects/nitronic-rush.html
 [action list]: #li-action-list
 [internal hierarchical profiler]: #li-internal-hierarchical-profiler
 [memory debugger]: #li-memory-debugger

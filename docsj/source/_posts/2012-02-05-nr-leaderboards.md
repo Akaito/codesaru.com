@@ -28,5 +28,5 @@ With just one user-entered string, users can play together with friends and avoi
 
 *After-thought:* Comparison with the [Wii friend code][]. Wii friend codes are good for pretty-secure, person-to-person friend interaction. Both parties need to know the other's lengthy, difficult-to-memorize, randomly-generated (per-game/system combo) string.  The "Friend Group" system in Nitronic Rush isn't as "secure" or "closed" a group as Wii friends, and so is not as suitable for games where very young children are a major part of the demographic. However, the Friend Group approach allows for some random encounters (such as if two people independently decide to use the "france" Friend Group). Plus, only one easy-to-remember and fairly short string is required for any number of people who wish to play together.
 
-[Nitronic Rush]: /projects/nitronic-rush
-[Wii friend code]: http://en.wikipedia.org/wiki/Friend_Code#Friend_Codes
+[Nitronic Rush]: /projects/nitronic-rush.html
+[Wii friend code]: https://en.wikipedia.org/wiki/Friend_Code#Friend_Codes
