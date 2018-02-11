@@ -1,0 +1,5 @@
+# Slugs breadcrumb trick from https://mademistakes.com/articles/using-jekyll-2016/
+projects:
+  name: Projects
+stories:
+  name: Stories

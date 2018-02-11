@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-10T17:26:00-08:00</updated><id>http://localhost:4000/</id><title type="html">Codesaru</title><subtitle>Chris Barrett's Portfolio Site</subtitle><author><name>Chris Barrett</name></author><entry><title type="html">codesaru.com</title><link href="http://localhost:4000/projects/codesaru-com.html" rel="alternate" type="text/html" title="codesaru.com" /><published>2015-01-29T00:00:00-08:00</published><updated>2015-01-29T00:00:00-08:00</updated><id>http://localhost:4000/projects/codesaru-com</id><content type="html" xml:base="http://localhost:4000/projects/codesaru-com.html">&lt;p&gt;This site was originally made with Drupal.  That was very nice for a while.  Eventually extensions, data backup and installation processes became a hassle.  To keep surprise maintenance to a minimum, the site was re-written with &lt;a href=&quot;https://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;.  Since long-term low-maintenance is the main goal on this rewrite, I’ve stuck with well-maintained tools and stayed away from fancy things.&lt;/p&gt;
+
+&lt;p&gt;Disclaimer: I’m not experienced with any of the tools being used here.  So don’t take it as best-practice if you’re learning, and be nice when judging it.&lt;/p&gt;
+
+&lt;h2 id=&quot;source&quot;&gt;Source&lt;/h2&gt;
+&lt;p&gt;This site’s main code can be found in &lt;a href=&quot;https://github.com/Akaito/codesaru.com&quot;&gt;this repo&lt;/a&gt;.  To run it locally for development, use &lt;a href=&quot;https://github.com/Akaito/codesaru.com-local&quot;&gt;this other repo&lt;/a&gt;, which has the first one as a git submodule.&lt;/p&gt;
+
+&lt;h2 id=&quot;tools-and-languages&quot;&gt;Tools and Languages&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cascading_Style_Sheets&quot;&gt;CSS&lt;/a&gt;, &lt;a href=&quot;https://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/HTML&quot;&gt;HTML&lt;/a&gt;, &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;, &lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt;&lt;/p&gt;</content><author><name>Chris Barrett</name></author><summary type="html">This site was originally made with Drupal. That was very nice for a while. Eventually extensions, data backup and installation processes became a hassle. To keep surprise maintenance to a minimum, the site was re-written with Flask. Since long-term low-maintenance is the main goal on this rewrite, I’ve stuck with well-maintained tools and stayed away from fancy things.</summary></entry><entry><title type="html">Global and Friend Leaderboards Without Accounts</title><link href="http://localhost:4000/stories/nr-leaderboard.html" rel="alternate" type="text/html" title="Global and Friend Leaderboards Without Accounts" /><published>2012-02-05T11:00:00-08:00</published><updated>2012-02-05T11:00:00-08:00</updated><id>http://localhost:4000/stories/nr-leaderboard</id><content type="html" xml:base="http://localhost:4000/stories/nr-leaderboard.html">&lt;p&gt;When making the online leaderboard for &lt;a href=&quot;/projects/nitronic-rush.html&quot;&gt;Nitronic Rush&lt;/a&gt;, these were the considerations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;As easy as possible to implement.&lt;/strong&gt; Only 6 days remained before the game was to be released.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No user accounts.&lt;/strong&gt; It should be as close to the old arcade feeling as possible (just your initials). No registration process, and no password to memorize.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No cheat-prevention.&lt;/strong&gt; Any cheat-prevention written in only six days would be broken in about as few. And having it there turns cheating into a fun puzzle to figure out.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Let users play with just their friends.&lt;/strong&gt; Playing against a world-wide top-ten is only fun for a select few. Plus cheaters will show up in that list.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Auto-magically work with user-created levels.&lt;/strong&gt; Any new levels should work with the leaderboard, without any effort on the user’s part.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Given these guidelines, one of the major differences in this leaderboard system from others I’ve seen arose. The “Friend Group” system was created so users could &lt;em&gt;avoid&lt;/em&gt; cheaters, rather than preventing or punishing them.&lt;/p&gt;
+
+&lt;p&gt;Every user has a Friend Group. It’s just an arbitrary string of reasonable length (a few words at most). The default Friend Group is “world” (case-insensitive). When a score is posted, its Friend Group is tracked. So the first level of Nitronic Rush has a leaderboard for “world”, another for “china”, and another for, say, “tom_and_me”. Aside from “world”, users created these by just typing in a different Friend Group; there’s no pre-defined list.&lt;/p&gt;
+
+&lt;p&gt;Once a score is posted to a Friend Group, that Friend Group exists.&lt;/p&gt;
+
+&lt;p&gt;If playing with the “world” Friend Group, this can be considered to be the world-wide leaderboard that so many other games have. Technically, one group is no different from another. If you want to avoid cheaters that begin to appear on a Group, or you want to play with just a small group of friends, change your Friend Group. You see only other people with the same Friend Group, and you can change your Friend Group at any time. At time of writing, about half of the Nitronic Rush leaderboard entries are in the “world” Friend Group. Though players can easily post their scores to different Friend Groups, and move around between them at will.&lt;/p&gt;
+
+&lt;p&gt;With just one user-entered string, users can play together with friends and avoid cheaters. Completely anonymously and without accounts, friends lists, or passwords.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;After-thought:&lt;/em&gt; Comparison with the &lt;a href=&quot;https://en.wikipedia.org/wiki/Friend_Code#Friend_Codes&quot;&gt;Wii friend code&lt;/a&gt;. Wii friend codes are good for pretty-secure, person-to-person friend interaction. Both parties need to know the other’s lengthy, difficult-to-memorize, randomly-generated (per-game/system combo) string.  The “Friend Group” system in Nitronic Rush isn’t as “secure” or “closed” a group as Wii friends, and so is not as suitable for games where very young children are a major part of the demographic. However, the Friend Group approach allows for some random encounters (such as if two people independently decide to use the “france” Friend Group). Plus, only one easy-to-remember and fairly short string is required for any number of people who wish to play together.&lt;/p&gt;</content><author><name>Chris Barrett</name></author><summary type="html">When making the online leaderboard for Nitronic Rush, these were the considerations:</summary></entry><entry><title type="html">Nitronic Rush</title><link href="http://localhost:4000/projects/nitronic-rush.html" rel="alternate" type="text/html" title="Nitronic Rush" /><published>2011-11-11T00:00:00-08:00</published><updated>2011-11-11T00:00:00-08:00</updated><id>http://localhost:4000/projects/nitronic-rush</id><content type="html" xml:base="http://localhost:4000/projects/nitronic-rush.html">&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube-nocookie.com/embed/vNuSvuzPL10?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;consumer-information&quot;&gt;Consumer Information&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://nitronic-rush.com/&quot; target=&quot;_blank&quot;&gt;Official Nitronic Rush Website&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://facebook.com/NitronicRush&quot; target=&quot;_blank&quot;&gt;Team Nitronic Facebook Page&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://torcht.com/nitronic-rush-soundtrack/&quot; target=&quot;_blank&quot;&gt;Nitronic Rush Official Soundtrack&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;awards&quot;&gt;Awards&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Indie Game Challenge&lt;/strong&gt; Gamer’s Choice Award (Voted on by the Public)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Independent Games Festival&lt;/strong&gt; Honorable Mention - “Technical Excellence”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Independent Games Festival&lt;/strong&gt; Honorable Mention - “Student Showcase”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Inside Gaming Awards&lt;/strong&gt; Finalist - “Best Indie Game”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gamasutra’s Best of 2011&lt;/strong&gt; Honorable Mention - “Top 10 Indie Games”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DIYGamer’s Best of 2011&lt;/strong&gt; Bronze Medal - “Indie of the Year”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DigiPen Game Awards&lt;/strong&gt; Game of the Year&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DigiPen Game Awards&lt;/strong&gt; Best Junior Game&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DigiPen Game Awards&lt;/strong&gt; Best Graphics&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DigiPen Game Awards&lt;/strong&gt; Best Physics&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DigiPen Game Awards&lt;/strong&gt; Best 3D Visual Design&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DigiPen Game Awards&lt;/strong&gt; Best&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;developer-information&quot;&gt;Developer Information&lt;/h2&gt;
+&lt;p&gt;Nitronic Rush is an “experimental, survival driving game” (with wings). It’s the most advanced project I’d worked on to date.&lt;br /&gt;
+We worked alongside our sister team, “&lt;a href=&quot;http://teamdiscotank.com/&quot; target=&quot;_blank&quot;&gt;Disco Tank&lt;/a&gt;”, whom made the game “&lt;a href=&quot;http://news.digipen.edu/student-projects/solstice-featured-at-tokyo-game-shows-sense-of-wonder-night/#.VMzAjf54rNo&quot; target=&quot;_blank&quot;&gt;Solstice&lt;/a&gt;”.  Team Disco Tank’s technical director/architect (&lt;a href=&quot;http://www.linkedin.com/pub/robert-onulak/12/2a1/564&quot; target=&quot;_blank&quot;&gt;Robert Onulak&lt;/a&gt;) and I worked together to create the “Superdyne” common architecture between our two games.  It was additionally used in a couple of homework projects by members of Team Nitronic.&lt;/p&gt;
+
+&lt;p&gt;In addition to the architecture, I also worked on some gameplay elements.  Among other things, this includes the trick system implementation, achievements, half the level editor (the more data-oriented parts), and the &lt;a href=&quot;/stories/nr-leaderboard.html&quot;&gt;online leaderboards&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The original core team was three programmers, one designer, and one producer.  Over time, the producer also worked on code and audio, two more joined to work on music and audio, four artists joined for concept, modeling, and textures, and one more artist for concept.&lt;/p&gt;
+
+&lt;p&gt;We worked primarily from May 2010 through November 2011.  Typically while carrying a full course load each.&lt;/p&gt;
+
+&lt;h3 id=&quot;libraries-used&quot;&gt;Libraries Used&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/DirectX&quot; target=&quot;_blank&quot;&gt;Microsoft DirectX&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.audiokinetic.com/en/products/wwise/introduction&quot; target=&quot;_blank&quot;&gt;Audiokinetic Wwise&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.antisphere.com/Wiki/tools:anttweakbar&quot; target=&quot;_blank&quot;&gt;AntTweakBar&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.grinninglizard.com/tinyxml/&quot; target=&quot;_blank&quot;&gt;TinyXML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.audiokinetic.com/en/products/wwise/introduction&quot; target=&quot;_blank&quot;&gt;cURL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Team Nitronic&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Kyle Holdwick - Producer, Audio&lt;/li&gt;
+  &lt;li&gt;Chris Barrett - Architecture&lt;/li&gt;
+  &lt;li&gt;Andrew Nollan - Graphics&lt;/li&gt;
+  &lt;li&gt;Jason Nollan - Physics&lt;/li&gt;
+  &lt;li&gt;Andy Kibler - Game Designer&lt;/li&gt;
+  &lt;li&gt;Laura Borgen - Concept Art, Texturing&lt;/li&gt;
+  &lt;li&gt;Eddie Peters - Concept Art, Modeling, SFX&lt;/li&gt;
+  &lt;li&gt;Ariel Gitomer - Concept Art, Modeling&lt;/li&gt;
+  &lt;li&gt;Nathan Aldrich - Concept Art, Modeling&lt;/li&gt;
+  &lt;li&gt;Chin Fong - Concept Art&lt;/li&gt;
+  &lt;li&gt;Jordan Hemenway - Music, SFX&lt;/li&gt;
+  &lt;li&gt;MJ Quigley - Music&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;DigiPen Institute of Technology&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ben Ellinger - Game Instructor&lt;/li&gt;
+  &lt;li&gt;Claude Comair - President&lt;/li&gt;
+  &lt;li&gt;Rachel Rutherford - Team Instructor&lt;/li&gt;
+  &lt;li&gt;Chris Peters - Technical Instructor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Team Disco Tank (our sister team)&lt;/em&gt;&lt;br /&gt;
+Kyle Holdwick, Jordan Hemenway, Robert Onulak, Steven Liss, Westley Hennigh&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Special Thanks&lt;/em&gt;&lt;br /&gt;
+Josh Davis, Ben Strukus, Casey Spurgeon, Richard Silva, Erik Mohrmann, Chris Howard, Cody Pritchard, Cameron Jacobson, Paul Flores, Josh Claeys, Chin Fong, Shawn Pearce&lt;/p&gt;</content><author><name>Chris Barrett</name></author><summary type="html"></summary></entry><entry><title type="html">Superdyne Common Architecture</title><link href="http://localhost:4000/projects/superdyne.html" rel="alternate" type="text/html" title="Superdyne Common Architecture" /><published>2011-08-01T12:00:00-07:00</published><updated>2011-08-01T12:00:00-07:00</updated><id>http://localhost:4000/projects/superdyne</id><content type="html" xml:base="http://localhost:4000/projects/superdyne.html">&lt;p&gt;As part of working on &lt;a href=&quot;/projects/nitronic-rush.html&quot;&gt;Nitronic Rush&lt;/a&gt;, I worked with another technical director/architect (&lt;a href=&quot;http://www.linkedin.com/pub/robert-onulak/12/2a1/564&quot; target=&quot;_blank&quot;&gt;Robert Onulak&lt;/a&gt;) of Team Nitronic’s sister team, &lt;a href=&quot;http://teamdiscotank.com/&quot; target=&quot;_blank&quot;&gt;Disco Tank&lt;/a&gt;, whom made the game “&lt;a href=&quot;http://news.digipen.edu/student-projects/solstice-featured-at-tokyo-game-shows-sense-of-wonder-night/#.VMzAjf54rNo&quot; target=&quot;_blank&quot;&gt;Solstice&lt;/a&gt;”.  We created the “Superdyne” architecture to be used by both teams.  Superdyne was additionally used in a couple of projects by team members.&lt;/p&gt;
+
+&lt;p&gt;Following is a list of most of Superdyne’s features.  &lt;strong&gt;Listed in bold&lt;/strong&gt; are the ones on which I was a significant part in creating.&lt;/p&gt;
+
+&lt;p&gt;“Too Long; Didn’t Read” list of what I worked on: &lt;a href=&quot;#li-action-list&quot;&gt;Action list&lt;/a&gt;, &lt;a href=&quot;#li-internal-hierarchical-profiler&quot;&gt;internal hierarchical profiler&lt;/a&gt;, &lt;a href=&quot;#li-memory-debugger&quot;&gt;memory debugger&lt;/a&gt;, &lt;a href=&quot;#li-function-binding&quot;&gt;function binding&lt;/a&gt;, &lt;a href=&quot;#li-lua-binding&quot;&gt;limited Lua binding&lt;/a&gt;, &lt;a href=&quot;#li-rpc-toolserver&quot;&gt;RPC and the ToolServer&lt;/a&gt;, &lt;a href=&quot;#li-cpp-reflection&quot;&gt;C++ Reflection&lt;/a&gt;, and &lt;a href=&quot;#li-serialization&quot;&gt;Serialization&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li id=&quot;li-action-list&quot;&gt;&lt;strong&gt;Action List:&lt;/strong&gt; Alternative to a state machine for describing behavior.  Every act() call executes the first action found in the first non-blocked group.  Execution continues until no more non-blocked actions are available.  Groups can be blocked/unblocked/modified while the list is executing.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Containers:
+		&lt;ul&gt;
+			&lt;li&gt;Handles: Used primarily by &lt;em&gt;GameObjectHandle&lt;/em&gt;.&lt;/li&gt;
+			&lt;li&gt;&lt;strong&gt;&lt;em&gt;RefString:&lt;/em&gt;&lt;/strong&gt; Holds only pointers to a &lt;em&gt;printf&lt;/em&gt;-style format and arguments.  This is used to avoid needing a temporary, local buffer to write into, only to be written into the actual destination buffer shortly thereafter.&lt;/li&gt;
+			&lt;li&gt;&lt;strong&gt;Templated Static Array:&lt;/strong&gt; Basic static array with some out-of-bound access protection.&lt;/li&gt;
+			&lt;li&gt;&lt;strong&gt;String:&lt;/strong&gt; &lt;a href=&quot;http://en.wikipedia.org/wiki/Object_copy#Lazy_copy&quot; target=&quot;_blank&quot;&gt;Late-copy&lt;/a&gt; string.  We still primarily used &lt;em&gt;std::string&lt;/em&gt; in most game code, though.&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt; &lt;!-- /containers li --&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Core: Handles program state, ISystem registration, frame-rate control, and game pause/unpause.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Debugging macros: Provides build-based compiled-out macros such as DebugErrorIf and ReleaseErrorIf.  Also had severity-based error and warning macros such as &lt;em&gt;gerror&lt;/em&gt;; these were mostly glorified &lt;em&gt;fprintf&lt;/em&gt; wrappers.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Client Variable: Very similar to &lt;a href=&quot;http://en.wikipedia.org/wiki/CVAR&quot; target=&quot;_blank&quot;&gt;Quake's CVAR system&lt;/a&gt;.  A global place to register variables fo any basic type (plus strings) for access in another area.  These can also be flagged as data to be saved in a per-user file.&lt;/li&gt; &lt;!-- /cvar li --&gt;
+	&lt;br /&gt;
+	&lt;li id=&quot;li-internal-hierarchical-profiler&quot;&gt;&lt;strong&gt;Internal, Hierarchical Profiler:&lt;/strong&gt; Alternative to an existing profiler in Superdyne.  Can write out all profiled information for a given frame, or just &quot;spike&quot; frames where a drop in performance beyond a specified threshold occurs.  In Nitronic Rush, this was set to print debug information to the screen on any spike frame, where it listed which profiled items were most to blame.  This profiler is nearly identical to a homework assignment in &lt;a href=&quot;https://www.digipen.edu/coursecatalog/#CS391&quot; target=&quot;_blank&quot;&gt;CS391: &quot;Code Analysis and Optimization&quot;&lt;/a&gt; at &lt;a href=&quot;https://digipen.edu&quot; target=&quot;_blank&quot;&gt;DigiPen&lt;/a&gt;.&lt;/li&gt; &lt;!-- /internal-hierarchical-profiler li --&gt;
+	&lt;br /&gt;
+	&lt;li id=&quot;li-memory-debugger&quot;&gt;&lt;strong&gt;Memory Debugger:&lt;/strong&gt; Can replace all allocations globally, or just specific ones.  Immediately detects any overflow or underflow read/write attempts.  Uses Windows OS features to do this (and consumes a great deal of memory in doing so; two pages per allocation it watches).  Drop-in copy from an assignment for &lt;a href=&quot;https://www.digipen.edu/coursecatalog/#CS391&quot; target=&quot;_blank&quot;&gt;CS391: &quot;Code Analysis and Optimization&quot;&lt;/a&gt; at &lt;a href=&quot;https://digipen.edu&quot; target=&quot;_blank&quot;&gt;DigiPen&lt;/a&gt;.&lt;/li&gt; &lt;!-- /memory-debugger li --&gt;
+	&lt;br /&gt;
+	&lt;li&gt;&lt;strong&gt;&lt;em&gt;PrintLastOsError()&lt;/em&gt;:&lt;/strong&gt; Just prints to stderr the last Windows error message.  Because doing this manually is tedious.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Factory: Creates &lt;em&gt;GameObjects&lt;/em&gt; based on &quot;blueprints&quot;.  I worked on two of the three implementations of blueprints and serialization we used with the Factory over the course of the primary projects using Superdyne.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li id=&quot;li-function-binding&quot;&gt;&lt;strong&gt;Template-Based Function Binding:&lt;/strong&gt; Written towards the start of my Sophomore year at &lt;a href=&quot;https://digipen.edu&quot; target=&quot;_blank&quot;&gt;DigiPen&lt;/a&gt;.  Used by &lt;a href=&quot;http://www.youtube.com/watch?v=HWbWmxL7GxA&quot; target=&quot;_blank&quot;&gt;bLight&lt;/a&gt; (Sophomore year team project), Superdyne, and &lt;a href=&quot;http://www.youtube.com/watch?v=lgDnPDxZLjM&amp;amp;t=37s&quot; target=&quot;_blank&quot;&gt;Fragment&lt;/a&gt; (another Junior year project, but one I had no other part in).  This system was extremely useful for Action Lists, our message systems, and property reflection.  However, this implementation is a hefty amount of code that is not trivial to read or follow.  If a compilation error occurs involving it, figuring out what's wrong can be challenging.  I'm also no longer satisfied by its speed.  The general idea works well -- this implementation is somewhat similar to what &lt;a href=&quot;http://thatgamecompany.com/games/flow/&quot; target=&quot;_blank&quot;&gt;flOw&lt;/a&gt; by &lt;a href=&quot;http://thatgamecompany.com/&quot; target=&quot;_blank&quot;&gt;thatgamecompany&lt;/a&gt; used -- but it should be preferably re-written before being used again.&lt;/li&gt; &lt;!-- /function-binding li --&gt;
+	&lt;br /&gt;
+	&lt;li&gt;&lt;em&gt;GameObject&lt;/em&gt;, &lt;em&gt;ComponentManager&lt;/em&gt;, and &lt;em&gt;Component&lt;/em&gt;: Game objects can have as many components as desired, and even multiples of the same type.  Components are automatically registered/unregistered with their respective managers on &lt;em&gt;GameObject&lt;/em&gt; initialization/de-initialization.  If you just want a component to be updated once each frame, a special &lt;em&gt;UpdateComponent&lt;/em&gt; is available to inherit from.&lt;/li&gt; &lt;!-- /components li --&gt;
+	&lt;br /&gt;
+	&lt;li&gt;&lt;em&gt;Level&lt;/em&gt;, &lt;em&gt;GameStateManager&lt;/em&gt;: &lt;em&gt;GameStateManager&lt;/em&gt; switches between &lt;em&gt;Level&lt;/em&gt;s when requested, or quits the game.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;&lt;em&gt;GhostEngine&lt;/em&gt;: &lt;a href=&quot;http://www.audiokinetic.com/en/products/wwise/introduction&quot; target=&quot;_blank&quot;&gt;Wwise&lt;/a&gt;-based audio engine.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Input: Uses &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/windows/desktop/ee417014(v=vs.85).aspx&quot; taret=&quot;_blank&quot;&gt;XInput&lt;/a&gt; for gamepads, and RawInput for keyboard, mouse, and 3D mouse support.  Differentiates between developer input and user input for easy toggling on/off of developer hotkeys in one location.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;&lt;em&gt;Interpolator&lt;/em&gt;, &lt;em&gt;PolyInterpolator&lt;/em&gt;, &lt;em&gt;SplineSystem&lt;/em&gt;: Templated, pausable variable interpolators&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li id=&quot;li-lua-binding&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://www.lua.org/&quot; target=&quot;_blank&quot;&gt;Lua&lt;/a&gt; binding:&lt;/strong&gt; For my own part, I mostly wrapped up the Lua state in a nicer C++-style interface, and used a mix of tolua++ and my own function binding for binding to Lua.  This old system is barely in use.  &lt;a href=&quot;/projects/nitronic-rush&quot;&gt;Nitronic Rush&lt;/a&gt; in particular uses almost no Lua.  In earlier stages of development, our level file was just a Lua script written by a &lt;a href=&quot;http://www.blender.org/&quot; target=&quot;_blank&quot;&gt;Blender&lt;/a&gt; &quot;exporter&quot; script that would create and modify all the level objects.  A newer Lua binding system was written by &lt;a href=&quot;http://www.linkedin.com/pub/robert-onulak/12/2a1/564&quot; target=&quot;_blank&quot;&gt;Robert Onulak&lt;/a&gt;, based on &lt;a href=&quot;http://thatgamecompany.com/company/people/john-edwards/&quot; target=&quot;_blank&quot;&gt;John Edwards&lt;/a&gt; of &lt;a href=&quot;http://thatgamecompany.com/&quot; target=&quot;_blank&quot;&gt;thatgamecompany&lt;/a&gt;'s template meta-programming lecture.&lt;/li&gt; &lt;!-- /lua-binding li --&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Math library: Matrices, vectors, quaternions, and some basic AABB-oriented classes.  Physics and graphics were not part of Superdyne, so only the most basic, shared math is implemented here.  By the end, because of the shared &lt;em&gt;Transform&lt;/em&gt; component yet fairly different uses of it between the two games, that component ended up being fairly bloated.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;&lt;strong&gt;&lt;em&gt;MessageSystem&lt;/em&gt;&lt;/strong&gt;, and &lt;em&gt;IMessage&lt;/em&gt;: An underlying template-based function-bound message system, with an object-based top layer.  The underlying function binding is my old system from the Sophomore year.  Used by four games in total.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li id=&quot;li-rpc-toolserver&quot;&gt;&lt;strong&gt;RPC and the &lt;em&gt;ToolServer&lt;/em&gt;&lt;/strong&gt;: We only used this towards the start of our projects.  At its peak, it allowed remote procedure calls on a one-to-one basis.  Lua was one of the possible receivers, which was very handy for quickly trying things out on a game.  Originally it was intended to allow levels to be edited by our designer while people were play-testing.  In the end, the most memorable things it allowed were faster iteration on some scripts (mostly for &lt;a href=&quot;http://news.digipen.edu/student-projects/solstice-featured-at-tokyo-game-shows-sense-of-wonder-night/#.VMzAjf54rNo&quot; target=&quot;_blank&quot;&gt;Solstice&lt;/a&gt;), and launching Minecraft on someone else's machine.  We just didn't have much need for this.&lt;/li&gt; &lt;!-- /rpc li --&gt;
+	&lt;br /&gt;
+	&lt;li id=&quot;li-cpp-reflection&quot;&gt;&lt;strong&gt;C++ Reflection&lt;/strong&gt;: Four versions of it.  The oldest reflection system was from Sophomore year, and based on the template-based function binding code from that year.  The second was in use only briefly, while we tinkered with the possibility of using &lt;a href=&quot;http://www.wxwidgets.org/&quot; target=&quot;_blank&quot;&gt;wxWidgets&lt;/a&gt;.  It had special considerations like proxy-ing the actual data being modified, and the ability for data to refuse a change that wasn't valid.  The third was based on &lt;a href=&quot;http://thatgamecompany.com/company/people/john-edwards/&quot; target=&quot;_blank&quot;&gt;John Edwards&lt;/a&gt; of thatgamecompany's template meta-programming lecture.  The final one (used today to populate &lt;a href=&quot;http://www.antisphere.com/Wiki/tools:anttweakbar&quot; target=&quot;_blank&quot;&gt;AntTweakBar&lt;/a&gt; bars for the level editor in &lt;a href=&quot;/projects/nitronic-rush&quot;&gt;Nitronic Rush&lt;/a&gt;) is a super straight-forward &lt;a href=&quot;http://en.wikipedia.org/wiki/Visitor_pattern&quot; target=&quot;_blank&quot;&gt;visitor-style&lt;/a&gt; interface.  This can be used well for things like serialization and debug output, as well.  It has some specializations for common math types in Superdyne, and doesn't have the code generation overhead or potentially confusing compiler error messages the template-based reflection had.&lt;/li&gt; &lt;!-- /c++-reflection li --&gt;
+	&lt;br /&gt;
+	&lt;li id=&quot;li-serialization&quot;&gt;&lt;strong&gt;Serialization&lt;/strong&gt;: Three versions of it.  Originally tried to just use &lt;a href=&quot;http://xerces.apache.org/xerces-c/&quot; target=&quot;_blank&quot;&gt;Xerxes-C++ Parser&lt;/a&gt;.  This ended up being a terrible idea, as Xerxes feels more aimed at business applications (it's very strict and good at verifying XML data).  Second was a very brief play with &lt;a href=&quot;http://www.json.org/&quot; target=&quot;_blank&quot;&gt;JSON&lt;/a&gt;.  Finally, ended with the &quot;Superial&quot; (&lt;em&gt;Super&lt;/em&gt;dyne &lt;em&gt;serial&lt;/em&gt;ization) system.  Uses &lt;a href=&quot;http://www.grinninglizard.com/tinyxml/&quot; target=&quot;_blank&quot;&gt;TinyXML&lt;/a&gt; to parse our XML data (mostly level files and game object &quot;blueprints&quot;; TinyXML because it's small and good for games).  Once TinyXML parses the data, I move it over into a &lt;em&gt;SuperialDataMap&lt;/em&gt;, made up of &lt;em&gt;SuperialValues&lt;/em&gt;.  &quot;Superial&quot; covers a smaller set of features than XML, but plenty for our purposes.  &lt;em&gt;SuperialValues&lt;/em&gt; are the primary means of passing data around to components being serialized.  &lt;a href=&quot;http://www.linkedin.com/pub/robert-onulak/12/2a1/564&quot; target=&quot;_blank&quot;&gt;Robert Onulak&lt;/a&gt; wrote another layer on top of Superial to simplify working with it.  This hides more features, but the underlying Superial data can still be accessed when those features are needed.&lt;/li&gt; &lt;!-- /serialization li --&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Singleton: Template-based means of defining a singleton type and its &quot;lifetime policy&quot;.&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;li&gt;Basic threading library: &lt;em&gt;Thread&lt;/em&gt;, &lt;em&gt;Mutex&lt;/em&gt;, &lt;em&gt;Lock&lt;/em&gt;, &lt;em&gt;ActiveObject&lt;/em&gt;, &lt;em&gt;ThreadPool&lt;/em&gt;, and &lt;em&gt;WorkerThread&lt;/em&gt; types.  Not used by &lt;a href=&quot;/projects/nitronic-rush&quot;&gt;Nitronic Rush&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Chris Barrett</name></author><summary type="html">As part of working on Nitronic Rush, I worked with another technical director/architect (Robert Onulak) of Team Nitronic’s sister team, Disco Tank, whom made the game “Solstice”. We created the “Superdyne” architecture to be used by both teams. Superdyne was additionally used in a couple of projects by team members.</summary></entry></feed>
