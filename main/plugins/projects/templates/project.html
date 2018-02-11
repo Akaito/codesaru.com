@@ -1,9 +1,0 @@
-{% extends "layout-project.html" %}
-{% block project_title %}{{ title }}{% endblock %}
-{% block publication_date %}
-	{{ date_begin }} - {{ date_end }}
-	{% if date_release %}
-		&nbsp; (released {{ date_release }})
-	{% endif %}
-{% endblock %}
-{% block project_contents %}{{ content }}{% endblock %}

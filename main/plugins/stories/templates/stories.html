@@ -1,8 +1,0 @@
-{% extends "layout-main.html" %}
-{% block contents %}
-	<ul>
-	{% for story_key in stories %}
-		<li><span class="publication_info">{{ stories[story_key].date }}</span> <a href="{{ story_key }}">{{ stories[story_key].title }}</a></li>
-	{% endfor %}
-	</ul>
-{% endblock %}
