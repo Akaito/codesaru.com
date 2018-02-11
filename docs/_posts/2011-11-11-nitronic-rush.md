@@ -8,6 +8,7 @@ date_release: 2011-11-11
 categories: projects
 priority:   1000
 slug:       nitronic-rush
+permalink: /:categories/:slug.html
 image_main: story_mode_flight.png
 images_sub:
   - hardcore_mode.png

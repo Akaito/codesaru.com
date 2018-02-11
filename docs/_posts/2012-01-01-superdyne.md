@@ -7,6 +7,7 @@ date_end:   2012
 categories: projects
 priority:   800
 slug:       superdyne
+permalink: /:categories/:slug.html
 image_main: SuperdyneGraphViz.png
 ---
 As part of working on [Nitronic Rush][], I worked with another technical director/architect (<a href="http://www.linkedin.com/pub/robert-onulak/12/2a1/564" target="_blank">Robert Onulak</a>) of Team Nitronic's sister team, <a href="http://teamdiscotank.com/" target="_blank">Disco Tank</a>, whom made the game "<a href="http://news.digipen.edu/student-projects/solstice-featured-at-tokyo-game-shows-sense-of-wonder-night/#.VMzAjf54rNo" target="_blank">Solstice</a>".  We created the "Superdyne" architecture to be used by both teams.  Superdyne was additionally used in a couple of projects by team members.

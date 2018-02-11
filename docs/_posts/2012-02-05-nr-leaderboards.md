@@ -5,6 +5,7 @@ date:       2012-02-05 12:00:00 -0700
 categories: stories
 priority:   750
 slug:       nr-leaderboard
+permalink: /:categories/:slug.html
 ---
 When making the online leaderboard for [Nitronic Rush][], these were the considerations:
 
