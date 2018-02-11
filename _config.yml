@@ -30,8 +30,8 @@ markdown: kramdown
 theme: minima
 include:
   - "_data"
-plugins:
-  - jekyll-feed
+#plugins:
+#    - jekyll-feed
 
 source:      .
 destination: ./_site
@@ -40,6 +40,7 @@ destination: ./_site
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
+  - .gitignore
   - _site
   - Gemfile
   - Gemfile.lock
@@ -48,4 +49,4 @@ exclude:
   - LICENSE-MinimaTheme.txt
   - Session.vim
   - serve.sh
-  - .gitignore
+  - byzanz-record-window.sh
