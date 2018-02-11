@@ -40,6 +40,7 @@ destination: ./docs
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
+  - _data
   - docs
   - Gemfile
   - Gemfile.lock
@@ -49,6 +50,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+  - LICENSE.txt
   - LICENSE-MinimaTheme.txt
   - Session.vim
   - serve.sh
