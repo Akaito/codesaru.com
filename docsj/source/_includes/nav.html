@@ -8,14 +8,16 @@ Breadcrumbs tricks from https://mademistakes.com/articles/using-jekyll-2016/
 
 <nav>
   <div id="links">
-    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <li>
-        <a href="{{ "/" | absolute_url }}">Home</a>
-      </li>
-      <li class="last_crumb">
-        <a href="{{ slug_first | relative_url }}">{{ slug.name }}</a>
-      </li>
-    </ol>
+    {% if page.layout != "home" %}
+      <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li>
+          <a href="{{ "/" | absolute_url }}">Home</a>
+        </li>
+        <li class="last_crumb">
+          <a href="{{ slug_first | relative_url }}">{{ slug.name }}</a>
+        </li>
+      </ol>
+    {% endif %}
   </div> <!-- /links -->
 </nav>
 
