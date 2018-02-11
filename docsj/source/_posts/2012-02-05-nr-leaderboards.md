@@ -3,10 +3,10 @@ layout:     post
 title:      "Global and Friend Leaderboards Without Accounts"
 date:       2012-02-05 12:00:00 -0700
 categories: stories
-order:      250
+priority:   750
 slug:       nr-leaderboard
 ---
-When making the online leaderboard for [Nitronic Rush](/projects/nitronic-rush), these were the considerations:
+When making the online leaderboard for [Nitronic Rush][], these were the considerations:
 
 - **As easy as possible to implement.** Only 6 days remained before the game was to be released.
 - **No user accounts.** It should be as close to the old arcade feeling as possible (just your initials). No registration process, and no password to memorize.

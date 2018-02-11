@@ -9,22 +9,6 @@ layout: default
   {% assign date_format = "%Y-%m-%d" %}
 
   <h3><a href="{{ "/stories/" | relative_url }}">Stories</a></h3>
-  <p>data: {{ site.data }}</p>
-  <p>stories: {{ site.data.stories }}</p>
-  {% for story in site.data.stories %}
-    {% capture page_url -%}
-    {{ story.categories }}/{{ story.slug }}.html
-    {%- endcapture %}
-    <div class="page_summary">
-      <p>{{ story.permalink }}</p>
-      <span class="publication_info">{{ story.date | date: date_format }}</span>
-      <span class="page_summary_title"><a href="{{ page_url | relative_url }}">{{ story.title }}</a></span>
-    </div> <!-- /page_summary (story) -->
-  {% endfor %}
-
-  <hr/>
-
-  <h3><a href="{{ "/stories/" | relative_url }}">Stories</a></h3>
   {% for story in site.categories['stories'] %}
     <div class="page_summary">
       <span class="publication_info">{{ story.date | date: date_format }}</span>
@@ -36,7 +20,7 @@ layout: default
 
   <h3><a href="{{ "/projects/" | relative_url }}">Projects</a></h3>
   <div class="project_summaries">
-  {% assign projects_sorted = site.categories['projects'] | sort: 'order' %}
+  {% assign projects_sorted = site.categories['projects'] | sort: 'priority' | reverse %}
   {% for project in projects_sorted %}
     <div class="project_summary">
       <a href="{{ project.url | relative_url }}">

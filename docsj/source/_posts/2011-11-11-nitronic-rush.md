@@ -6,7 +6,7 @@ date_begin: 2010
 date_end:   2012
 date_release: 2011-11-11
 categories: projects
-order:      100
+priority:   1000
 slug:       nitronic-rush
 image_main: story_mode_flight.png
 images_sub:

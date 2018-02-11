@@ -6,7 +6,7 @@ date_begin:   2012
 date_end:     2018
 date_release: 2015-01-29 12:00:00 -0700
 categories:   projects
-order:        1000
+priority:     50
 slug:         codesaru-com
 image_main:   codesaru-jinja.png
 ---
