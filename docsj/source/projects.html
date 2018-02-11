@@ -1,0 +1,27 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+
+<ul>
+  {% assign projects_sorted = site.categories['projects'] | sort: 'priority' | reverse %}
+  {% for project in projects_sorted %}
+    <li>
+      <a href="{{ project.url | relative_url }}">
+        <span class="publication_info">
+          {% if project.date_begin and project.date_end %}
+            {{ project.date_begin }} - {{ project.date_end }}
+          {% endif %}
+        </span>
+        <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        <span class="publication_info">
+          {% if project.date_release %}
+            (released {{ project.date_release | date: date_format }})
+          {% endif %}
+        </span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+

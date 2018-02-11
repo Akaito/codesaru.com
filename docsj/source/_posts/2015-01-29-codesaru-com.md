@@ -1,10 +1,10 @@
 ---
 layout:       post
 title:        "codesaru.com"
-date:         2015-01-29 12:00:00 -0700
+date:         2015-01-29
 date_begin:   2012
 date_end:     2018
-date_release: 2015-01-29 12:00:00 -0700
+date_release: 2015-01-29
 categories:   projects
 priority:     50
 slug:         codesaru-com
