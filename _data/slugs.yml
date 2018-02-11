@@ -1,4 +1,6 @@
 # Slugs breadcrumb trick from https://mademistakes.com/articles/using-jekyll-2016/
+noise:
+  name: Noise
 projects:
   name: Projects
 stories:

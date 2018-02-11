@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Recovering work</title>
+  <meta name="description" content="Recovering my old starting point made during recovery from surgery.">
+
+  <link rel="stylesheet" href="/assets/css/codesaru.com.css">
+  <!-- <link rel="stylesheet" href="/assets/main.css"> --> <!-- Minima theme -->
+  <link rel="canonical" href="/noise/recovering-work.html">
+  <link rel="alternate" type="application/rss+xml" title="Codesaru" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+    <div class="body-wrapper" id="wrapper">
+
+      <div id="top_part">
+        <header class="site-header" role="banner">
+
+  
+    
+    
+    <div id="top_links">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="https://linkedin.com/in/chrishbarrett">LinkedIn</a></li>
+      </ul>
+    </div> <!-- /top_links -->
+
+    <div id="site_title"> <!-- (csaru id) -->
+      <a class="site-title" href="/"><span id="title">Codesaru</span>&nbsp;&nbsp;Chris Barrett's Portfolio Site</a>
+    </div>
+  
+  
+  
+</header>
+
+        
+
+
+
+
+
+<nav>
+  <div id="links">
+    
+      
+        <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li class="last_crumb">
+            <a href="/noise">Noise</a>
+          </li>
+        </ol>
+      
+    
+  </div> <!-- /links -->
+</nav>
+
+
+      </div> <!-- /top_part -->
+      <div id="top_main_spacer"></div>
+      <div id="main_part">
+        <div id="contents">
+
+          <main class="page-content" aria-label="Content">
+            <div class="wrapper">
+              
+<div id="md_project_title">
+  <h1>Recovering work</h1>
+  <span class="publication_info">
+    
+      2017-07-30
+    
+
+    
+  </span> <!-- /publication_info -->
+
+  <hr/>
+</div> <!-- /project_title -->
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <br/>
+
+  <div class="post-content" itemprop="articleBody">
+    
+    <p>Recovering my old starting point made during recovery from surgery.</p>
+
+<p>During eleven bed-ridden days, restarted an even older project to make a platformer with fun movement.
+There are two primary inspirations for the work:</p>
+<ol>
+  <li>Implementing the old N Ninja math tutorials for how their collision works.
+    <ul>
+      <li><a href="http://www.metanetsoftware.com/technique/tutorialA.html">Tutorial A</a></li>
+      <li><a href="http://www.metanetsoftware.com/technique/tutorialB.html">Tutorial B</a></li>
+    </ul>
+  </li>
+  <li>Supporting every sample from the ActionGame Algorithm Maniax book.
+    <ul>
+      <li>Japanese programming book that reverse-engineers action game characters/mechanics from the 80s up.</li>
+    </ul>
+  </li>
+</ol>
+
+<!-- TODO: Add links to the above -->
+
+<!-- more -->
+
+<p>The first goal is to use N Ninja-esque collision, and support every or almost every character/mechanic explained in the ActionGame book.</p>
+
+<p>The work is all being done on Linux first.
+Windows support will eventually happen.
+Working completely within Linux is what I’m doing right now.
+So all tools used must also work there.</p>
+
+<p>Main tools so far are:</p>
+<ul>
+  <li><a href="http://clang.llvm.org/">clang</a> for C++.</li>
+  <li><a href="http://www.vim.org/">Vim</a> for code/text file editing.</li>
+  <li><a href="https://wiki.archlinux.org/index.php/Terminator">Terminator</a> for terminal multiplexing.</li>
+  <li><a href="https://sourceware.org/gdb/">gdb</a> for debugging.</li>
+</ul>
+
+<p>No code tags, intellisense, or anything like that yet.
+I’ll get around to it eventually, when the code’s complex enough to warrant it.</p>
+
+<h1 id="1-projection-test">1. Projection test</h1>
+
+<p><img src="/assets/images/2017-07-30_projection.gif" /></p>
+
+<p>Just get a vector p1-&gt;p0 (red-&gt;blue) projected onto the line segment p1-&gt;p2 (red-&gt;green).
+Make the handles draggable for testing.</p>
+
+<ul>
+  <li><a href="https://www.libsdl.org/">SDL2</a> for window and input management, and rendering.  Also their wonderful assert/trap/continue.</li>
+  <li><a href="https://www.opengl.org/">OpenGL 2</a> for some other rendering.</li>
+  <li><a href="https://github.com/ocornut/imgui">Dear ImGui</a> for an easy way to both debug and poke things.
+  I liked AntTweakBar in the past, but wanted something a little more modern in its API, and I liked that Dear ImGui <em>doesn’t</em> make its own draw calls.</li>
+  <li><a href="http://cmldev.net/">CML</a> (Configurable Math Library) for vectors, points, etc.</li>
+</ul>
+
+<h1 id="2-sat-box-test">2. SAT box test</h1>
+
+<p><img src="/assets/images/2017-07-30_sat-box.gif" /></p>
+
+<p>Mimic the Metanet tutorial sample seen <a href="http://www.metanetsoftware.com/technique/tutorialA.html#section1">here</a> (Flash required).
+Shows what the projection of the box in the middle looks like on the line.
+Line can be moved around the box with the handle.
+Don’t mind the floating “p0” text.
+That’s an ImGui tooltip, which displays at the cursor’s position.</p>
+
+<h1 id="3-sat-boxes-test">3. SAT boxes test</h1>
+
+<p><img src="/assets/images/2017-07-30_sat-boxes.gif" /></p>
+
+<p>Have two moveable rectangular objects.
+If they overlap, show a vector that is the smallest movement of the red box available to separate the boxes.</p>
+
+<h1 id="4-sat-triangle-test">4. SAT triangle test</h1>
+
+<p><img src="/assets/images/2017-07-30_sat-tri.gif" /></p>
+
+<p>Change one of the shapes to a triangle.
+Two legs must be axis-aligned.
+Press ‘R’ to resolve the “collision” by moving the red box out of the triangle the shortest possible distance.</p>
+
+<h1 id="5-sat-convex-test">5. SAT convex test</h1>
+
+<p><img src="/assets/images/2017-07-30_sat-convex.gif" /></p>
+
+<p>SAT test supports any two arbitrary convex shapes.</p>
+
+<h1 id="6-tile-test">6. tile test</h1>
+
+<p><img src="/assets/images/2017-07-30_tiles.gif" /></p>
+
+<p>Add a tile map/world.
+Add a camera.</p>
+
+<ul>
+  <li>Tile assets by Kenney; you can find them in the <a href="http://kenney.nl/assets/voxel-pack">voxel pack</a>.</li>
+  <li>Tilemap files edited with <a href="http://www.mapeditor.org/">Tiled</a>.</li>
+  <li>“Mod” support with Icculus’ <a href="https://www.icculus.org/physfs/">PhysicsFS</a>.</li>
+  <li>Texture/image loading with the single-header library <a href="https://github.com/nothings/stb">stb_image.h</a>.</li>
+  <li>XML parsing with <a href="http://www.grinninglizard.com/tinyxml2/index.html">TinyXML</a>.</li>
+</ul>
+
+<h1 id="7-platformer-test">7. platformer test</h1>
+
+<p><img src="/assets/images/2017-07-30_platformer-gravity-wrap.gif" />
+<img src="/assets/images/2017-07-30_platformer-triangle-anim.gif" /></p>
+
+<p>Red character is driven by “player 1” controls.
+Other characters share “player 2” controls.
+Controls are deliberately limited to four directions and one button.
+May become two directions and two buttons.
+Animations are hand-made XML for the time being.</p>
+
+<p>Characters “wrap” by default if collision doesn’t stop them.
+Rendering updated so wrapping characters show on both sides of the screen (hacky).</p>
+
+<p>Characters are controlled by Lua scripts.
+Scripts choose whether to turn tile world collision on or off, and whether or not they want gravity handled for them automatically.
+One of the goals is to make it very easy for a person with zero programming experience to make something fun.
+But without taking away so much control that an advanced user couldn’t do something completely unexpected.
+Like every other file being loaded from disk, these can be “modded” (replaced or added to).</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- simplest-player.lua</span>
+<span class="n">m_x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">function</span> <span class="nf">move</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">input</span><span class="p">.</span><span class="n">right</span> <span class="k">then</span>
+        <span class="n">m_x</span> <span class="o">=</span> <span class="n">m_x</span> <span class="o">+</span> <span class="mi">20</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Tile collision (the second pass written) is built in the N Ninja style, from the Metanet tutorials.
+The borders between “empty space” and “solid tile with a plain edge” can be shown in red.
+No support for “interesting” edges yet (curves, cut-away tiles, etc.).</p>
+
+<ul>
+  <li>Character assets by Kenney; you can find them in the <a href="http://www.kenney.nl/assets/abstract-platformer">abstract platformer pack</a>.</li>
+  <li>Started using <a href="http://valgrind.org/">Valgrind</a> to check for leaks.
+  Found a couple of my own, but most leaks are specific to being on a Surface Pro 3’s hardware/drivers.
+  Thankfully Valgrind makes it easy to build up an “ignore” file, too.</li>
+</ul>
+
+
+  </div>
+
+  
+</article>
+
+            </div>
+          </main>
+
+          <footer class="site-footer">
+  <br/><hr/>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <p>&copy; 2011-2018 Chris Barrett</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+        </div> <!-- /contents -->
+      </div> <!-- /main_part -->
+      <div id="bottom_spacer"></div>
+    </div> <!-- /wrapper -->
+  </body>
+
+</html>

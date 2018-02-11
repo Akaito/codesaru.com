@@ -3,7 +3,10 @@ layout: default
 ---
 <article class="post">
 
-  <h1 class="post-title">{{ page.title | escape }}</h1>
+  <div class="page_subsection_heading">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <span>{{ page.sub_heading | escape }}</span>
+  </div>
 
   <div class="post-content">
     {{ content }}

@@ -2,7 +2,11 @@
 layout: page
 title: Projects
 permalink: /projects/
+sub_heading: (completed work)
 ---
+{% comment %}
+Breadcrumb nav not showing up properly for a new category?  Check _data/slugs.yml.
+{% endcomment %}
 
 <ul>
   {% assign projects_sorted = site.categories['projects'] | sort: 'priority' | reverse %}

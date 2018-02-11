@@ -319,6 +319,19 @@ nav #links {
   margin-left: 1%;
 }
 
+.page_subsection_heading {
+    margin-top: 0.5em;
+}
+.page_subsection_heading h1,
+.page_subsection_heading h3 {
+    display: inline;
+}
+.page_subsection_heading span {
+    font-size: smaller;
+    color: gray;
+    margin-left: 0.5%;
+}
+
 .publication_info {
 	font-size: smaller;
 	color: gray;

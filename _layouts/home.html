@@ -8,17 +8,23 @@ layout: default
 
   {% assign date_format = "%Y-%m-%d" %}
 
-  <h3><a href="{{ "/stories/" | relative_url }}">Stories</a></h3>
+  <div class="page_subsection_heading">
+    <h3><a href="{{ "/stories/" | relative_url }}">Stories</a></h3>
+    <span>(less common tricks described)</span>
+  </div>
   {% for story in site.categories['stories'] %}
     <div class="page_summary">
       <span class="publication_info">{{ story.date | date: date_format }}</span>
-      <span class="page_summary_title"><a href="{{ story.url | relative_url }}">{{ story.title }}</a></span>
+      <span class="page_summary_title"><a href="{{ story.url | relative_url }}">{{ story.title | escape }}</a></span>
     </div> <!-- /page_summary (story) -->
   {% endfor %}
 
-  <hr/>
+  <br/><hr/>
 
-  <h3><a href="{{ "/projects/" | relative_url }}">Projects</a></h3>
+  <div class="page_subsection_heading">
+      <h3><a href="{{ "/projects/" | relative_url }}">Projects</a></h3>
+      <span>(completed work)</span>
+  </div>
   <div class="project_summaries">
   {% assign projects_sorted = site.categories['projects'] | sort: 'priority' | reverse %}
   {% for project in projects_sorted %}
@@ -33,25 +39,26 @@ layout: default
             <span class="date_release">(released {{ project.date_release | date: date_format }})</span>
           {% endif %}
         </div>
-        <div class="project_summary_title">{{ project.title }}</div>
+        <div class="project_summary_title">{{ project.title | escape }}</div>
       </a>
     </div> <!-- /project_summary (project) -->
   {% endfor %}
   </div> <!-- /project_summaries -->
 
-  {% comment %}
-  <hr/>
+  <br/><hr/>
 
-  {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-      <h2>
-        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </h2>
-    </li>
+  <div class="page_subsection_heading">
+      <h3><a href="{{ "/noise/" | relative_url }}">Noise</a></h3>
+      <span>(misc. smaller stuff ends up here)</span>
+  </div>
+  {% for post in site.categories['noise'] %}
+    <div class="page_summary">
+      <span class="publication_info">{{ post.date | date: date_format }}</span>
+      <span class="page_summary_title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></span>
+    </div> <!-- /page_summary (post) -->
   {% endfor %}
 
+  {% comment %}
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {% endcomment %}
 

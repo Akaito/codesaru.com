@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Global and Friend Leaderboards Without Accounts"
+title:      Global and friend leaderboards without accounts
 date:       2012-02-05 12:00:00 -0700
 categories: stories
 priority:   750
