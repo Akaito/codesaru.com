@@ -11,21 +11,19 @@ Breadcrumb nav not showing up properly for a new category?  Check _data/slugs.ym
 <ul>
   {% for post in site.categories['noise'] %}
     <li>
-      <a href="{{ post.url | relative_url }}">
-        <span class="publication_info">
-          {% if post.date_begin and post.date_end %}
-            {{ post.date_begin }} - {{ post.date_end }}
-          {% else %}
-            {{ post.date | date: "%Y-%m-%d" }}
-          {% endif %}
-        </span>
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        <span class="publication_info">
-          {% if post.date_release %}
-            (released {{ post.date_release | date: date_format }})
-          {% endif %}
-        </span>
-      </a>
+      <span class="publication_info">
+        {% if post.date_begin and post.date_end %}
+          {{ post.date_begin }} - {{ post.date_end }}
+        {% else %}
+          {{ post.date | date: "%Y-%m-%d" }}
+        {% endif %}
+      </span>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      <span class="publication_info">
+        {% if post.date_release %}
+          (released {{ post.date_release | date: date_format }})
+        {% endif %}
+      </span>
     </li>
   {% endfor %}
 </ul>
