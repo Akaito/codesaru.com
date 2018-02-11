@@ -54,3 +54,4 @@ exclude:
   - LICENSE-MinimaTheme.txt
   - Session.vim
   - serve.sh
+  - .gitignore
