@@ -18,16 +18,19 @@ Animal Crossing: New Leaf translation(s)
 
 ## House down payment, to upgrade from a tent (not enough bells)
 
-<img alt="image01" id="image01" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image01.jpg"/>
+<div class="translated_stuff" id="block01">
+<img alt="image01" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image01.jpg"/>
 <table><tr><th>Japanese</th><th>English</th></tr><tr><td class="japanese">
 いらっしゃいませー！
 <!-- 1<ruby>時<rt>じ</rt></ruby> -->
 </td><td class="english">
 Welcome!
 </td></tr></table>
+</div>
 <br/><br/><br/><br/>
 
-<img alt="image02" id="image02" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image02.jpg"/>
+<div class="translated_stuff" id="block02">
+<img alt="image02" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image02.jpg"/>
 <table><tr><th>Japanese</th><th>English</th></tr><tr><td class="japanese">
 あっ！<br/>
 クリスさん、どーもどーも！
@@ -35,9 +38,11 @@ Welcome!
 Ah!<br/>
 Chris, hello-hello!
 </td></tr></table>
+</div>
 <br/><br/><br/><br/>
 
-<img alt="image03" id="image03" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image03.jpg"/>
+<div class="translated_stuff" id="block03">
+<img alt="image03" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image03.jpg"/>
 <table><tr><th>Japanese</th><th>English</th></tr><tr><td class="japanese">
 あっ！<br/>
 クリスさん、どーもどーも！<br/>
@@ -50,10 +55,11 @@ Chris, hello-hello!<br/>
 As for the process of moving, to finish even-if? (or)
 Is the move finished?
 </td></tr></table>
+</div>
 <br/><br/><br/><br/>
 
-<div class="translated_stuff">
-<img alt="image04" id="image04" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image04.jpg"/>
+<div class="translated_stuff" id="block04">
+<img alt="image04" src="{{ "/assets/images/animal-crossing/house-down-payment/" | relative_url }}image04.jpg"/>
 <table><colgroup><col width="50%"/><col width="50%"/></colgroup>
 <thead><tr><th>Japanese</th><th>English</th></tr></thead>
 <tbody><tr><td class="japanese">
