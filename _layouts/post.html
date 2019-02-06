@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+
 {% assign date_format = "%Y-%m-%d" %}
 <div id="md_project_title">
   <h1>{{ page.title | escape }}</h1>
@@ -43,8 +44,4 @@ layout: default
     {% endif %}
     {{ content }}
   </div>
-
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
 </article>
