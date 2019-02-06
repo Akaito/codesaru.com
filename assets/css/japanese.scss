@@ -1,0 +1,22 @@
+---
+---
+
+/* Furigana trick from PowerLion1's StackOverflow answer: https://stackoverflow.com/a/54325004
+   The accepted answer using "ruby" and "t" elements breaks table formatting.
+*/
+fg:before {
+	content:     attr(t);
+	display:     block;
+	font-size:   60%;
+	text-align:  left;
+	//text-align:  center;
+	line-height: 1.5;
+}
+fg {
+	display:               inline-block;
+	text-indent:           0px;
+	line-height:           normal;
+	-webkit-text-emphasis: none;
+	text-align:            center;
+	line-height:           1;
+}

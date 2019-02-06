@@ -11,7 +11,9 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
   
-  {% if jekyll.environment == 'production' and site.google_analytics %}
-  {% include google-analytics.html %}
+  <!-- Japanese stuff -->
+  <link rel="stylesheet" href="{{ "/assets/css/japanese.css" | relative_url }}">
+  {% if page.translation_post %}
+    <link rel="stylesheet" href="{{ "/assets/css/translation-post.css" | relative_url }}">
   {% endif %}
 </head>

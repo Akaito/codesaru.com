@@ -1,0 +1,43 @@
+---
+---
+
+div.translated_stuff {
+	padding: 5px;
+	border: 1px;
+}
+
+table {
+	padding: 15px;
+}
+th {
+	text-align: left;
+}
+td {
+	//padding-right: 100px;
+	vertical-align: top;
+}
+
+td.question:before {
+	content: "❓";
+}
+td.question {
+	background-color: #a2d5f9;
+}
+
+.japanese,.english {
+	font-size: 115%;
+}
+
+div.japanese::before {
+	content:     "Japanese: ";
+	font-weight: bold;
+}
+
+div.english::before {
+	content:     "English: ";
+	font-weight: bold;
+}
+
+.english fg:before {
+	font-style: italic;
+}
