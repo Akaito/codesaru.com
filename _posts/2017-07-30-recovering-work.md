@@ -5,9 +5,9 @@ categories: noise
 slug:       recovering-work
 ---
 
-Recovering my old starting point made during recovery from surgery.
+Recovering my old starting point while recovering from surgery.
 
-During eleven bed-ridden days, restarted an even older project to make a platformer with fun movement.
+During eleven bed-ridden days, restarted an older project to make a platformer with fun movement.
 There are two primary inspirations for the work:
 1. Implementing the old N Ninja math tutorials for how their collision works.
     - [Tutorial A](http://www.metanetsoftware.com/technique/tutorialA.html)
