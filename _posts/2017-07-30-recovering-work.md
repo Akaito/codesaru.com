@@ -12,8 +12,9 @@ There are two primary inspirations for the work:
 1. Implementing the old N Ninja math tutorials for how their collision works.
     - [Tutorial A](http://www.metanetsoftware.com/technique/tutorialA.html)
     - [Tutorial B](http://www.metanetsoftware.com/technique/tutorialB.html)
-2. Supporting every sample from the ActionGame Algorithm Maniax book.
-    - Japanese programming book that reverse-engineers action game characters/mechanics from the 80s up.
+2. Supporting every sample from the アクションゲーム　アルゴリズム　マニアックス book.
+    - Japanese programming book that reverse-engineers action game characters/mechanics from the '80s up.
+    - Translated title: ActionGame Algorithm Maniax.
 
 <!-- TODO: Add links to the above -->
 
@@ -129,6 +130,6 @@ No support for "interesting" edges yet (curves, cut-away tiles, etc.).
 
 - Character assets by Kenney; you can find them in the [abstract platformer pack](http://www.kenney.nl/assets/abstract-platformer).
 - Started using [Valgrind](http://valgrind.org/) to check for leaks.
-    Found a couple of my own, but most leaks are specific to being on a Surface Pro 3's hardware/drivers.
+    Found a couple of my own, but most leaks are specific to the readily-available drivers for the Surface Pro 3 in Linux.
     Thankfully Valgrind makes it easy to build up an "ignore" file, too.
 
