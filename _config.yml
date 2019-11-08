@@ -51,4 +51,5 @@ exclude:
   - LICENSE-MinimaTheme.txt
   - Session.vim
   - serve.sh
+  - serve-nodrafts.sh
   - byzanz-record-window.sh
